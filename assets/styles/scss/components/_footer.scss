@@ -1,0 +1,432 @@
+.footer{
+    margin-top: 2rem;
+    
+    background-image: url('../../../src/images/footer.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    >.top{
+        @include bodyPadding();
+        background-color: $blueColor;
+        @include flex(row , space-between , center);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        ul{
+            @include flex(row , null , center);
+            padding-right: 0;
+            margin-bottom: 0;
+            li{
+                margin-left: 1.5rem;
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+        a.go-to-top{
+            border-radius: 50%;
+            background-color: white;
+            @include flex(row , center , center);
+            padding: 0.5rem;
+            text-decoration: none;
+            i{
+                font-size: 1.1rem;
+                color: $blueColor;
+            }
+            svg{
+                display: none;
+            }
+        }
+    }
+
+    >.middle{
+        @include flex(row , space-between );
+        @include bodyPadding();
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        >.info{
+            @include flex(column);
+            max-width: 40%;
+            // logo
+            >.logo{
+                @include flex(row);
+                margin-bottom: 1rem;
+                >.img{
+                    border-radius: 50%;
+                    width: 2rem;
+                    height: 2rem;
+                    margin-left: 0.5rem;
+                    img{
+                        border-radius: 50%;
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+                >.text{
+                    @include flex(column);
+                    h3{
+                        font-size: 1rem;
+                        color: $blueColor;
+                        font-weight: 500;
+                    }
+                    h2{
+                        font-size: 0.9rem;
+                        opacity: 0.6;
+                        color: black;
+                    }
+                }
+            }
+            >.description{
+                @include flex(row , null , center);
+                margin-bottom: 2rem;
+                span{
+                    color: $blueColor;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+                p{
+                    font-size: 0.9rem;
+                    color: black;
+                    line-height: 2rem
+                }
+            }
+
+            >.contact{
+                @include flex(row , space-between , center);
+                >.phone{
+                    @include flex(row , center , center);
+                    >.img{
+                        @include flex(row , center , center);
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        border: 1px solid $blueColor;
+                        border-radius: 8px;
+                        i{
+                            color: $blueColor;
+                            font-size: 1rem;
+                        }
+                        margin-left: 0.5rem;
+                    }
+                    >.text{
+                        @include flex(column);
+                        span{
+                            font-size: 0.8rem;
+                            color: black;
+                            margin-bottom: 0.5rem;
+                        }
+                        p{
+                            color: black;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                >.social{
+                    @include flex();
+                    a{
+                        @include flex(row , center , center);
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        border: 1px solid black;
+                        text-decoration: none;
+                        border-radius: 8px;
+                        i{
+                            color: black;
+                            font-size: 1rem;
+                        }
+                        margin-right: 0.5rem;
+
+                    }
+                }
+            }
+        }
+        >.guiad{
+            width: 30%;
+            max-width: 30%;
+            h3{
+                font-weight: 600;
+                font-size: 1rem;
+                color: black;
+            }
+            ul{
+                @include flex(column , null , null , wrap);
+                padding-right: 0;
+                margin-bottom: 0;
+                max-height: 10rem;
+                li{
+                    margin-bottom: 1rem;
+                    a{
+                        color: black;
+                        font-size: 0.8rem;
+                        text-decoration: none;
+                        transition: all 0.3s;
+                    }
+                    a:hover{
+                        color: $blueColor;
+                    }
+                }
+            }
+        }
+        >.e-namad{
+            max-width: 30%;
+            @include flex(row);
+            div{
+                @include flex(row , center , center);
+                background-color: white;
+                width: 8rem;
+                height: 10rem;
+                border: 1px solid rgba(black , 0.1);
+                margin-right: 1rem;
+                img{
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
+    hr{
+        width: calc(100% - 6rem);
+        margin: auto;
+    }
+    >.copyright{
+        @include bodyPadding();
+        @include flex(column , center , center);
+        padding-top: 1rem;
+        p{
+            color: black;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    @include mobile{
+        >.top{
+            padding-top: 0;
+            ul{
+                @include flex(row , null , center , wrap);
+                li{
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                    a{
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+            a.go-to-top{
+                padding: 0.25rem;
+                i{
+                    font-size: 1rem;
+                }
+            }
+        }
+        >.middle{
+            @include flex(column , flex-start , center);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            >.info{
+                @include flex(column , null , center);
+                max-width: inherit;
+                margin-bottom: 2rem;
+                // logo
+                >.logo{
+                    @include flex(row);
+                    margin-bottom: 1rem;
+                }
+                >.description{
+                    margin-bottom: 1rem;
+                    span{
+                        font-size: 0.75rem;
+                    }
+                    p{
+                        font-size: 0.75rem;
+                        text-align: justify;
+                        line-height: 1.5rem;
+                    }
+                }
+    
+                >.contact{
+                    @include flex(row , space-between , center);
+                    width: 100%;
+                    >.phone{
+                        @include flex(row , center , center);
+                        >.img{
+                            width: 2rem;
+                            height: 2rem;
+                            i{
+                                font-size: 0.9rem;
+                            }
+                        }
+                        >.text{
+                            span{
+                                font-size: 0.75rem;
+                            }
+                            p{
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+                    >.social{
+                        a{
+                            width: 2rem;
+                            height: 2rem;
+                            i{
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+            >.guiad{
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 1rem;
+                h3{
+                    font-size: 0.9rem;
+                    text-align: center
+                }
+                ul{
+                    max-height: 8rem;
+                    li{
+                        a{
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+            >.e-namad{
+                width: 100%;
+                max-width: inherit;
+                justify-content: center;
+                div{
+                    width: 6rem;
+                    height: 8rem;
+                    margin-right: 0.5rem;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+        hr{
+            width: calc(100% - 2rem);
+        }
+        >.copyright{
+            p{
+                font-size: 0.75rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    @include tablet{
+        >.top{
+            ul{
+                @include flex(row , null , center , wrap);
+                li{
+                    margin-left: 1rem;
+                    a{
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+            a.go-to-top{
+                padding: 0.25rem;
+                i{
+                    font-size: 1rem;
+                }
+            } 
+        }
+
+        >.middle{
+            >.info{
+                max-width: 35%;
+                >.description{
+                    span{
+                        font-size: 0.75rem;
+                    }
+                    p{
+                        font-size: 0.75rem;
+                        line-height: 1.5rem;
+                    }
+                }
+    
+                >.contact{
+                    >.phone{
+                        >.img{
+                            width: 2rem;
+                            height: 2rem;
+                            i{
+                                font-size: 0.9rem;
+                            }
+                        }
+                        >.text{
+                            span{
+                                font-size: 0.75rem;
+                            }
+                            p{
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                    >.social{
+                        a{
+                            width: 2rem;
+                            height: 2rem;
+                            i{
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+            >.guiad{
+                h3{
+                    font-size: 0.9rem;
+                }
+                ul{
+                    li{
+                        a{
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+            >.e-namad{
+                max-width: 25%;
+                div{
+                    width: 6rem;
+                    height: 7rem;
+                    img{
+                        width: 4rem;
+                        height: 4rem;
+                    }
+                }
+            }
+        }
+        hr{
+            width: calc(100% - 3rem);
+        }
+        >.copyright{
+            p{
+                font-size: 0.75rem;
+            }
+        }
+    }
+
+    @include largeDevices{
+        >.middle{
+            >.info{
+                max-width: 35%;            
+            }
+        }
+        hr{
+            width: calc(100% - 4rem);
+        }
+    }
+
+    @include extraLarge{
+        hr{
+            width: calc(100% - 30rem);
+        }
+    }
+}

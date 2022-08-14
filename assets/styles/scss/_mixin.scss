@@ -1,0 +1,577 @@
+// Box Shadow
+@mixin boxshadow($opacity: 0.1, $x: 0px, $y: 0px, $smooth: 15px) {
+    box-shadow: $x $y $smooth rgba(0, 0, 0, $opacity);
+}
+
+// Flex Option
+@mixin flex($direction: row, $content: null, $items: null, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+
+    @if $content {
+        justify-content: $content;
+    }
+
+    @if $items {
+        align-items: $items;
+    }
+}
+
+// Left and Right padding of each section 
+@mixin bodyPadding {
+    padding-right: 3rem;
+    padding-left: 3rem;
+    @include mobile{
+        padding-right: 1rem;
+        padding-left: 1rem;    
+    }
+    @include tablet{
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;    
+    }
+    @include largeDevices{
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+    @include extraLarge{
+        padding-right: 15rem;
+        padding-left: 15rem;
+    }
+}
+
+// Calender
+@mixin calender {
+    >.calender {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 50px;
+        margin: auto;
+        width: 70%;
+        margin-top: 2rem;
+
+        form {
+            @include flex(row, space-between, center);
+
+            >.place,
+            >.enter,
+            >.exit {
+                @include flex(row, null, center);
+
+                i {
+                    color: $blueColor;
+                    margin-left: 0.5rem;
+                    font-size: 1.2rem;
+                }
+
+                >div.form-group {
+                    @include flex(column);
+
+                    label {
+                        color: black;
+                        font-size: 0.9rem;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    input {
+                        border: 0;
+                        font-size: 0.8rem;
+                    }
+
+                    input:focus {
+                        outline: 0;
+                    }
+                }
+            }
+
+            >.enter,
+            >.exit {
+                border: 1px solid rgba(black, 0.1);
+                border-radius: 5px;
+                padding: 0.5rem;
+
+                i {
+                    color: black;
+                    opacity: 0.5;
+                    font-size: 1rem;
+                }
+            }
+
+            >.count {
+                border: 1px solid rgba(black, 0.1);
+                border-radius: 5px;
+                padding: 0.5rem 1rem;
+                @include flex(row, null, center);
+
+                >div {
+                    @include flex(column, null, center);
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+
+                    span.number {
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                    }
+
+                    span:last-child {
+                        opacity: 0.6;
+                        color: black;
+                        font-size: 0.8rem;
+                        margin-top: 0.5rem;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    background-color: #F5F5F5;
+                    border-radius: 5px;
+                    padding: 0.5rem;
+
+                    i {
+                        color: black;
+                    }
+                }
+            }
+
+            >.submit {
+                margin-left: -5%;
+
+                button {
+                    border: 1px solid white;
+                    background-color: $blueColor;
+                    cursor: pointer;
+                    padding: 0.75rem;
+                    border-radius: 15px;
+
+                    i {
+                        color: white;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include largeDevices{
+        // Calender
+        >.calender {
+            width: 80%;
+        }
+    }
+}
+
+// Title Slider
+@mixin title-slider {
+    .title{
+        @include flex(row,space-between, center);
+        margin-bottom: 2rem;
+        >.name{
+            @include flex(row,null,center);
+            i{
+                color: $blueColor;
+                font-size: 1.3rem;
+                margin-left: 0.5rem;
+            }
+            h3{
+                font-size: 1.1rem;
+                color: black;
+                font-weight: 600;
+            }
+        }
+        >.arrows{
+            @include flex(row, null , center);
+            a.see-more{
+                color: black;
+                margin-left: 0.5rem;
+                font-size: 0.9rem;
+                text-decoration: none;
+                transition: all 0.3s;
+            }
+            a.see-more:hover{
+                color: $blueColor;
+            }
+            a:not(.see-more){
+                background-color: #F5F5F5;
+                color: black;
+                border-radius: 5px;
+                padding: 0.5rem;
+                margin-right: 0.5rem;
+                i{
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        .title{
+            margin-bottom: 1rem;
+            >.name{
+                i{
+                    font-size: 1rem;
+                }
+                h3{
+                    font-size: 0.9rem;
+                }
+            }
+            >.arrows{
+                @include flex(row, null , center);
+                a.see-more{
+                    font-size: 0.75rem;
+                }
+                a:not(.see-more){
+                    padding: 0.25rem;
+                    i{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet{
+        .title{
+            margin-bottom: 1rem;
+            >.name{
+                i{
+                    font-size: 1rem;
+                }
+                h3{
+                    font-size: 0.9rem;
+                }
+            }
+            >.arrows{
+                @include flex(row, null , center);
+                a.see-more{
+                    font-size: 0.75rem;
+                }
+                a:not(.see-more){
+                    padding: 0.25rem;
+                    i{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Item Slider
+@mixin item-slider {
+    .item{
+        .img{
+            position: relative;
+            border-radius: 15px;
+            a{
+                img{
+                    border-radius: 15px;
+                    width: 100%;
+                    height: 10rem;
+                    object-fit: cover;
+                }
+            }
+
+            a.category{
+                position: absolute;
+                bottom: 5%;
+                right: 5%;
+                background-color: white;
+                color: $blueColor;
+                font-size: 0.8rem;
+                border-radius: 5px;
+                padding: 0.25rem;
+            }
+            a.like{
+                text-decoration: none;
+                @include flex(row , center , center);
+                position: absolute;
+                background-color: white;
+                top: 5%;
+                left: 5%;
+                border-radius: 5px;
+                width: 1.75rem;
+                height: 1.75rem;
+                i{
+                    color: black;
+                    transition: all 0.3s;
+                }
+                i.bxs-heart{
+                    color: #FF0000;
+                }
+                transition: all 0.3s;
+            }
+            a.like:hover{
+                i{
+                    color: #FF0000;
+                }
+            }
+        }
+        .text{
+            @include flex(column);
+            padding: 0.5rem;
+            h3{
+                margin-bottom: 1rem;
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-size: 1rem;   
+                    transition: all 0.3s;
+                }
+                a:hover{
+                    color: $blueColor;
+                }
+            }
+            .locate-rate-comment{
+                @include flex(row , space-between , center);
+                margin-bottom: 1rem;
+                .locate{
+                    @include flex(row , null , center);
+                    i{
+                        color: $blueColor;
+                        margin-left: 0.25rem;
+                    }
+                    p{
+                        color: black;
+                        opacity: 0.7;
+                        font-size: 0.8rem;
+                    }
+                }
+                .rate-comment{
+                    @include flex(row , null , center);
+                    .rate{
+                        @include flex(row , null , center);
+                        margin-left: 0.5rem;
+                        span.icon{
+                            background-color: $blueColor;
+                            border-radius: 5px;
+                            padding: 0.15rem;
+                            @include flex(row,center,center);
+                            margin-left: 0.25rem;
+                            i{
+                                color: white;
+                                font-size: 0.8rem;
+                            }
+                        }
+                        span{
+                            color: black;
+                            font-size: 0.8rem
+                        }
+                    }
+                    .comment{
+                        @include flex(row , null , center);
+                        i{
+                            margin-left: 0.25rem;
+                        }
+                        span{
+                            color: black;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+
+            .price{
+                @include flex(row , space-between);
+                .old{
+                    @include flex(column);
+                    p{
+                        color: black;
+                        opacity: 0.8;
+                        font-size: 1rem;
+                        text-decoration: line-through;
+                        margin-bottom: 0.5rem;
+                    }
+                    span{
+                        background-color: rgba($color: #FF0000, $alpha: 0.1);
+                        color: #FF0000;
+                        font-size: 0.9rem;
+                        border-radius: 5px;
+                        padding: 0.25rem;
+                    }
+                }
+                .new{
+                    @include flex(column);
+                    p{
+                        font-weight: 600;
+                        color: black;
+                        font-size: 1rem;
+                        margin-bottom: 0.5rem;
+                    }
+                    span{
+                        align-self: flex-end;
+                        color: black;
+                        opacity: 0.8;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        .item{
+            width: 100%;
+            .img{
+                a{
+                    img{
+                        height: 12rem;
+                    }
+                }
+    
+                a.category{
+                    font-size: 0.75rem;
+                }
+            }
+            .text{
+                h3{
+                    margin-bottom: 0.75rem;
+                    a{
+                        font-size: 0.9rem;    
+                    }
+                }
+                .locate-rate-comment{
+                    margin-bottom: 0.75rem;
+                    .locate{
+                        @include flex(row , null , center);
+                        p{
+                            font-size: 0.75rem;
+                        }
+                    }
+                    .rate-comment{
+                        .rate{
+                            span.icon{
+                                i{
+                                    font-size: 0.75rem;
+                                }
+                            }
+                            span{
+                                font-size: 0.75rem
+                            }
+                        }
+                        .comment{
+                            span{
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                }
+    
+                .price{
+                    .old{
+                        p{
+                            font-size: 0.9rem;
+                        }
+                        span{
+                            font-size: 0.75rem;
+                        }
+                    }
+                    .new{
+                        p{
+                            font-size: 0.9rem;
+                        }
+                        span{
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet{
+        .item{
+            width: 33.33%;
+            .img{
+                a{
+                    img{
+                        height: 8.5rem;
+                    }
+                }
+    
+                a.category{
+                    font-size: 0.75rem;
+                }
+            }
+            .text{
+                h3{
+                    margin-bottom: 0.75rem;
+                    a{
+                        font-size: 0.9rem;    
+                    }
+                }
+                .locate-rate-comment{
+                    margin-bottom: 0.75rem;
+                    .locate{
+                        @include flex(row , null , center);
+                        p{
+                            font-size: 0.75rem;
+                        }
+                    }
+                    .rate-comment{
+                        .rate{
+                            span.icon{
+                                i{
+                                    font-size: 0.75rem;
+                                }
+                            }
+                            span{
+                                font-size: 0.75rem
+                            }
+                        }
+                        .comment{
+                            span{
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                }
+    
+                .price{
+                    .old{
+                        p{
+                            font-size: 0.9rem;
+                        }
+                        span{
+                            font-size: 0.75rem;
+                        }
+                    }
+                    .new{
+                        p{
+                            font-size: 0.9rem;
+                        }
+                        span{
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Mobile Devices Breakpoint
+@mixin mobile {
+    @media (max-width: 767.98px) {
+        @content;
+    }
+}
+
+// Extra Large Device Breakpoint
+@mixin extraLarge {
+    @media (min-width : 1400px) {
+        @content;
+    }
+}
+
+// Large Devices
+@mixin largeDevices {
+    @media (min-width: 992px) and (max-width: 1199.98px) { 
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 991.98px) { 
+        @content;    
+    }
+}

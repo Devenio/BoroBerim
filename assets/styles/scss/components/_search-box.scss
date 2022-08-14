@@ -1,0 +1,265 @@
+.main {
+
+    // search box with background
+    >.search-box {
+        margin: 0 3rem 0 3rem;
+        background-image: url('../../../src/images/background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        height: 29.5rem;
+
+        padding-top: 3rem;
+
+        border-radius: 15px;
+
+        // Title
+        >.title {
+            @include flex(column, null, center);
+
+            h1 {
+                color: white;
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+                text-shadow: 3px 3px 15px rgba(0, 0, 0, 1);
+            }
+
+            p {
+                font-size: 1.2rem;
+                color: white;
+                text-shadow: 3px 3px 15px rgba(0, 0, 0, 1);
+            }
+        }
+
+        // see newest and most view
+        >.new-view {
+            @include flex(row, center, center);
+            margin-top: 2rem;
+
+            a {
+                text-decoration: none;
+                font-size: 0.9rem;
+                padding: 0.75rem 1.5rem;
+                transition: all 0.3s;
+                border-radius: 10px;
+                border: 1px solid white;
+            }
+
+            a.new {
+                margin-left: 1rem;
+                background-color: white;
+                color: $blueColor;
+            }
+
+            a.view {
+                background-color: $blueColor;
+                color: white;
+            }
+        }
+
+        // Calender
+        @include calender();
+    }
+
+    >.calender-responsive {
+        display: none;
+        margin: 0 1rem 0 1rem;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 15px;
+
+        form {
+            @include flex(row, space-between, null, wrap);
+
+            >.enter,
+            >.exit {
+                @include flex(row, null, center);
+                border-radius: 5px;
+                padding: 0.5rem;
+                background-color: white;
+
+                width: calc(50% - 1.25rem);
+                max-width: calc(50% - 1.25rem);
+
+                i {
+                    margin-left: 0.5rem;
+                    font-size: 0.9rem;
+                }
+
+                >div.form-group {
+                    @include flex(column);
+
+                    label {
+                        color: black;
+                        font-size: 0.8rem;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    input {
+                        border: 0;
+                        font-size: 0.75rem;
+                        width: 95%;
+                    }
+
+                    input:focus {
+                        outline: 0;
+                    }
+                }
+            }
+
+            >.count {
+                border-radius: 5px;
+                padding: 0.5rem 1rem;
+                background-color: white;
+
+                @include flex(row, center, center);
+                width: 100%;
+                max-width: 100%;
+
+                margin-top: 0.5rem;
+
+                >div {
+                    @include flex(column, null, center);
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                    width: 40%;
+
+                    span.number {
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                    }
+
+                    span:last-child {
+                        opacity: 0.6;
+                        color: black;
+                        font-size: 0.8rem;
+                        margin-top: 0.5rem;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    background-color: #F5F5F5;
+                    border-radius: 5px;
+                    padding: 0.5rem;
+
+                    i {
+                        color: black;
+                    }
+                }
+            }
+
+            >.submit {
+                margin-top: 1rem;
+                margin-bottom: -2.5rem;
+                z-index: 999;
+                @include flex(row, center, null);
+                width: 100%;
+
+                button {
+                    border: 1px solid white;
+                    background-color: $blueColor;
+                    cursor: pointer;
+                    padding: 0.75rem;
+                    border-radius: 15px;
+
+                    i {
+                        color: white;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        >.search-box {
+            @include flex(row, center, center);
+            margin: 0 1rem 1rem 1rem;
+
+            height: 15rem;
+
+            padding-top: 0;
+
+            // Title
+            >.title {
+                h1 {
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+
+            // see newest and most view
+            >.new-view {
+                display: none;
+            }
+
+            >.calender {
+                display: none;
+            }
+        }
+
+        >.calender-responsive {
+            display: block;
+        }
+    }
+
+    @include tablet {
+        >.search-box {
+            @include flex(column, center, center);
+
+            margin: 0 1rem 1rem 1rem;
+
+            height: 18rem;
+
+            padding-top: 0;
+
+            // Title
+            >.title {
+                h1 {
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+
+            // see newest and most view
+            >.new-view {
+                a {
+                    font-size: 0.75rem;
+                    padding: 0.5rem 1rem;
+                }
+            }
+
+            // calender
+            >.calender {
+                display: none;
+            }
+        }
+
+        >.calender-responsive {
+            display: block;
+        }
+    }
+
+    @include largeDevices{
+        >.search-box {
+            margin: 0 2rem 0 2rem;
+
+            height: 25rem;
+
+        }
+    }
+
+    @include extraLarge {
+        >.search-box {
+            margin: 0 15rem 0 15rem;
+        }
+    }
+}

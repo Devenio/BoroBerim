@@ -1,0 +1,134 @@
+.main{
+    >.about-us{
+        >.title{
+            margin-top: -2rem;
+            background-image: url('../../../src/images/footer.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        
+            @include flex(column , center , center);
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            margin-bottom: 2rem;
+            h1{
+                font-size: 1.2rem;
+                color: black;
+                font-weight: 600;
+            }
+            hr{
+                border-width: 5px;
+                border-color: $blueColor;
+                width: 5%;
+            }
+            p{
+                font-size: 0.9rem;
+                color: black;
+                span{
+                    font-weight: 600;
+                }
+            }
+        }
+
+        >.text{
+            @include boxshadow();
+            border-radius: 15px;
+            @include flex(column ,center , center);
+            width: 60%;
+            margin: auto;
+            padding: 1.5rem;
+            >div{
+                border-bottom: 1px solid rgba(black , 0.1);
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+                h3{
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+                hr{
+                    width: 10%;
+                    border-color: $blueColor;
+                    border-width: 3px;
+                }
+                p{
+                    text-align: justify;
+                    font-size: 0.9rem;
+                    color: black;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        >.about-us{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 15%;
+                }
+                p{
+                    font-size: 0.75rem;
+                }
+            }
+
+            >.text{
+                width: 85%;
+                padding: 1rem;
+                >div{
+                    h3{
+                        font-size: 0.9rem;
+                    }
+                    hr{
+                        width: 15%;
+                    }
+                    p{
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet{
+        >.about-us{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 15%;
+                }
+                p{
+                    font-size: 0.75rem;
+                }
+            }
+
+            >.text{
+                width: 85%;
+                padding: 1rem;
+                >div{
+                    h3{
+                        font-size: 0.9rem;
+                    }
+                    hr{
+                        width: 15%;
+                    }
+                    p{
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,396 @@
+// Header
+.header{
+    margin-bottom: 2rem;
+    // Top Blue Nav
+    >.top{
+        @include bodyPadding();
+        background-color: $blueColor;
+        @include flex(row,space-between , center);
+        height: 2rem;
+        >p{
+            font-size: 0.75rem;
+            color: white;
+            width: 33.33%;
+        }
+        >p.date{
+            text-align: center;
+        }
+        >div{
+            width: 33.33%;
+            >ul{
+                padding-right: 0;
+                margin-bottom: 0;
+                @include flex(row , flex-end , center);
+                li{
+                    margin-right: 1.5rem;
+                    a{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+
+    // Main Menu Nav
+    >.menu{
+        @include bodyPadding();
+        @include flex(row , space-between , center);
+        background-color: white;
+        @include boxshadow();
+        z-index: 1000;
+        // logo and login link
+        >.logo-login{
+            @include flex(row , null , center);
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            width: 33.33%;
+            // logo
+            >.logo{
+                @include flex(row);
+                margin-left: 2rem;
+                >.img{
+                    border-radius: 50%;
+                    width: 2rem;
+                    height: 2rem;
+                    margin-left: 0.5rem;
+                    img{
+                        border-radius: 50%;
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+                >.text{
+                    @include flex(column);
+                    h3{
+                        font-size: 1rem;
+                        color: $blueColor;
+                    }
+                    h2{
+                        font-size: 0.9rem;
+                        opacity: 0.6;
+                        color: black;
+                    }
+                }
+            }
+
+            // login link
+            >.login-link{
+                a{
+                    @include flex(row , null , center);
+                    text-decoration: none;
+                    color: black;
+                    font-size: 0.8rem;
+                    padding: 0.75rem 1.5rem;
+                    background-color: #F5F5F5;
+                    border-radius: 10px;
+                    // font-weight: 500;
+                    i{
+                        color: $blueColor;
+                        font-size: 1.1rem;
+                        margin-left: 0.25rem;
+                        font-weight: 500;
+                        transition: all 0.3s;
+                    }
+                    transition: all 0.3s;
+                }
+                a:hover{
+                    background-color: $blueColor;
+                    color: white;
+                    i{
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        // Search
+        >.search{
+            width: 33.33%;
+            @include flex(row , null , center);
+            position: relative;
+            i.right-input{
+                color: $blueColor;
+                position: absolute;
+                right: 5%;
+            }
+            input{
+                @include boxshadow($opacity: 0.1, $x: 0px, $y: 0px, $smooth: 10px);
+                width: 80%;
+                border: 1px solid $blueColor;
+                border-radius: 15px;
+                padding: 1rem 0.75rem;
+                padding-right: 3rem;
+            }
+            input:focus{
+                outline: none;
+            }
+            button.left-input{
+                cursor: pointer;
+                position: absolute;
+                left: 12%;
+                background-color: inherit;
+                border: 0;
+                i{
+                    font-size: 1rem;
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        // Be host and list
+        >.host-list{
+            @include flex(row , flex-end , center);
+            width: 33.33%;
+            a{
+                @include flex(row,null , center);
+                text-decoration: none;
+                color: black;
+                font-size: 0.9rem;
+                transition: all 0.3s;
+                i{
+                    margin-left: 0.25rem;
+                    font-size: 1rem;
+                }
+            }
+            a.list{
+                margin-right: 1rem;
+            }
+            a:hover{
+                color: $blueColor;
+            }
+        }
+    }
+
+    >.search-calender{
+        @include calender();
+        position: fixed;
+        top: -50%;
+        background: $backgroundColor;
+        width: 100%;
+        z-index: 1000;
+        transition: .5s;
+        >.calender{
+            margin-bottom: 2rem;
+        }
+    }
+    >.search-calender.active{
+        transition: .5s;
+        top: 0%;
+    }
+
+    #{&}__responsive {
+        @include bodyPadding();
+        background-color: #F8F9F9;
+        display: none;
+        &-show {
+            @include flex(row, space-between, center);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            >div{
+                @include flex(row , null , center);
+                >.logo{
+                    margin-right: 0.5rem;
+                    @include flex(row , null , center);
+                    img{
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                    h3{
+                        margin-right: 0.25rem;
+                        font-size: 0.75rem;
+                        color: $blueColor;
+                        font-weight: 600;
+                    }
+                }
+            }
+            form{
+                background-color: white;
+                @include flex(row, null , center);    
+                border-radius: 10px;   
+                padding-right: 0.25rem;
+                padding-left: 0.25rem;     
+                input{
+                    border-radius: 10px;   
+                    border: 0;
+                    font-size: 0.75rem;
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+                }
+                button{
+                    background-color: inherit;
+                    border: inherit;
+                    padding: 0;
+                }
+                
+            }
+        }
+
+        &-collapse {
+            position: fixed;
+            right: -70%;
+            background: $backgroundColor;
+            width: 60%;
+            height: 100%;
+            z-index: 1000;
+            transition: .5s;
+
+            padding: 1rem;
+            overflow-y: scroll;
+
+            .collapse-menu {
+                >.logo{
+                    @include flex(column,center , center);
+                    margin-bottom: 1.5rem;
+                    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+                    padding-bottom: 1.5rem;
+                    img{
+                        width: 3rem;
+                        height: 3rem;
+                    }
+                    p{
+                        color: black;
+                        opacity: 0.7;
+                        font-size: 0.8;
+                        margin-top: 0.75rem;
+                        margin-bottom: 0.75rem;
+                    }
+                    h3{
+                        color: $blueColor;
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                }
+                >.date-phone-login{
+                    width: 100%;
+                    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+                    ul{
+                        padding-right: 0;
+                        margin-bottom: 0;
+                        li{
+                            margin-bottom: 1.5rem;
+                            // padding-right: 0.5rem;
+                            a{
+                                @include flex(row , null , center);
+                                text-decoration: none;
+                                color: black;
+                                font-size: 0.8rem;
+                                border-right: 3px solid $blueColor;
+                                padding-right: 0.5rem;
+                                i{
+                                    margin-left: 0.25rem;
+                                    color: $blueColor;
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+                        div{
+                            @include flex(row , space-between , center);
+                            li.be-host{
+                                background-color: white;
+                                border-radius: 5px;
+                                border: 1px solid $blueColor;
+                                padding: 0.25rem;
+                                a{
+                                    color: $blueColor;
+                                    border-right: 0;
+                                    padding-right: 0;
+
+                                    i{
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                            li.list{
+                                background-color: $blueColor;
+                                border: 1px solid $blueColor;
+                                border-radius: 5px;
+                                padding: 0.25rem;
+                                a{
+                                    color: white;
+                                    border-right: 0;
+                                    padding-right: 0;
+    
+                                    i{
+                                        margin-left: 0;
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }   
+                >.other{
+                    padding-top: 1.5rem;
+                    ul{
+                        padding-right: 0;
+                        margin-bottom: 0;
+                        li{
+                            margin-bottom: 1.5rem;
+                            a{
+                                text-decoration: none;
+                                color: black;
+                                font-size: 0.8rem;
+                                border-right: 3px solid $blueColor;
+                                padding-right: 0.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-collapse.active {
+            transition: .5s;
+            right: 0;
+        }
+    }
+
+    @include mobile{
+        >.top{
+            display: none;
+        }
+        >.menu{
+            display: none;
+        }
+        #{&}__responsive{
+            display: block;
+        }
+    }
+
+    @include tablet{
+        >.top{
+            display: none;
+        }
+        >.menu{
+            display: none;
+        }
+        #{&}__responsive{
+            display: block;
+        }
+    }
+
+    @include extraLarge{
+        >.search-calender{
+            >.calender{
+                width: calc(80% - 30rem);
+            }
+        }
+    }
+}
+
+@include mobile{
+    .header{
+        margin-bottom: 1rem;
+        @include boxshadow();
+    }
+}
+
+@include tablet{
+    .header{
+        margin-bottom: 1rem;
+        @include boxshadow();
+    }
+}
+

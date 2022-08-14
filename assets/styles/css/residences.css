@@ -1,0 +1,68 @@
+* {
+  box-sizing: inherit !important;
+}
+#provinceName, #cityName {
+  background-color: transparent;
+}
+input[type="text"],
+input[type="search"],
+textarea {
+  background-color: #f5f5f5; border: 1px solid transparent !important;
+}
+input[type="text"] {
+  height: 52px; padding: 0 15px !important;
+}
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  border-color: #7292fc !important;
+}
+input[type="search"] {
+  text-align: right;
+}
+input[type="search"]::-webkit-input-placeholder {
+  color: #9ca3af;
+}
+input[type="search"]::-moz-placeholder {
+  color: #9ca3af;
+}
+input[type="search"]:-ms-input-placeholder {
+  color: #9ca3af;
+}
+input[type="search"]:-moz-placeholder {
+  color: #9ca3af;
+}
+.form-name > span {
+  border-bottom: 4px solid #3f69ff; padding-bottom: 9px;
+}
+.icon-wrapper > div {
+  width: 75px; height: 75px; border-radius: 50%; background-color: #fcfcfc; display: flex; justify-content: center; align-items: center;
+  border: 1px solid #f8f8f8;
+}
+.submit-cancel {
+  display: flex !important; justify-content: center !important; align-items: center !important;
+}
+.submit-cancel button {
+  width: 235px !important;
+}
+.form-group {
+  position: relative;
+}
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label,
+textarea:focus ~ .floating-label,
+textarea:not(:focus):valid ~ .floating-label {
+  top: -19px;
+  right: 20px;
+  font-size: 12px;
+  opacity: 1;
+}
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  right: 20px;
+  top: 18px;
+  transition: 0.2s ease all;
+  color: #9ca3af;
+  font-size: 14px;
+}

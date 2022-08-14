@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 70 70">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Ellipse_1" data-name="Ellipse 1" cx="35" cy="35" r="35" transform="translate(873.398 15.398)" fill="#fff"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_1713" data-name="Rectangle 1713" width="70" height="70"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_1" data-name="Mask Group 1" transform="translate(-873.398 -15.398)" clip-path="url(#clip-path)">
+    <g id="Digicoweb_-_pro" data-name="Digicoweb - pro" transform="translate(873.398 15.398)" clip-path="url(#clip-path-2)">
+      <rect id="Rectangle_1712" data-name="Rectangle 1712" width="70" height="70" fill="#1749ff"/>
+      <g id="Group_66765" data-name="Group 66765" transform="translate(14.875 11.375)">
+        <g id="Group_66927" data-name="Group 66927" transform="translate(0)">
+          <path id="Icon_ionic-logo-polymer" data-name="Icon ionic-logo-polymer" d="M31.941,1.088H21.9L2.115,33.551l4.741,8.662,19.8-32.463L33.2,21.65,21.9,42.213H31.941L43.24,21.65Z" transform="translate(-2.115 -1.088)" fill="#fff"/>
+          <line id="Line_6" data-name="Line 6" x2="9.625" transform="translate(20.125 47.25)" fill="none" stroke="#19ecfc" stroke-width="4"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

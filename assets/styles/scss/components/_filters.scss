@@ -1,0 +1,419 @@
+.main{
+    >.filters-places{
+        >.title{
+            margin-top: -2rem;
+            background-image: url('../../../src/images/footer.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        
+            @include flex(column , center , center);
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            h1{
+                font-size: 1.2rem;
+                color: black;
+                font-weight: 600;
+            }
+            hr{
+                border-width: 5px;
+                border-color: $blueColor;
+                width: 5%;
+            }
+            p{
+                font-size: 0.9rem;
+                color: black;
+                span{
+                    font-weight: 600;
+                }
+            }
+        }
+
+        >.kinds{
+            @include bodyPadding();
+            @include flex(row , center , center , wrap);
+            background-color: $backgroundColor;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            a{
+                margin-bottom: 1rem;
+                @include flex(row , center , center);
+                padding: 0.5rem 1.5rem;
+                text-decoration: none;
+                background-color: white;
+                color: black;
+                border: 1px solid white;
+                font-size: 0.9rem;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+                border-radius: 5px;
+                transition: all 0.3s;
+                i{
+                    margin-left: 0.25rem;
+                    font-size: 1rem;
+                }
+                i.dot{
+                    display: none;
+                }
+            }
+            a:hover{
+                border: 1px solid $blueColor;
+            }
+            a.active{
+                i.dot{
+                    display: block;
+                    color: $blueColor;
+                    font-size: 0.75rem;
+                    margin-left: 0.5rem;
+                    margin-right: -0.75rem;
+                }
+            }
+        }
+
+        >.sorts-selected{
+            @include flex(row , space-between , center);
+            @include bodyPadding();
+            margin-bottom: 2rem;
+            >.sorts{
+                @include flex(row , null , center);
+                span{
+                    font-size: 0.8rem;
+                    color: black;
+                }
+                div{
+                    margin-right: 0.5rem;
+                    a{
+                        font-size: 0.8rem;
+                        color: black;
+                        margin-left: 0.5rem;
+                        padding: 0.25rem 0.5rem; 
+                        border-radius: 5px;
+                        text-decoration: none;
+                        transition: all 0.3s;
+                    }
+                    a.active{
+                        background-color: rgba($color: #1749FF, $alpha: 0.05);
+                        color: #1749FF;
+                    }
+                    a:hover{
+                        background-color: rgba($color: #1749FF, $alpha: 0.05);
+                        color: #1749FF;
+                    }
+                }
+            }
+            >.selected{
+                @include flex(row , null , center);
+                a{
+                    @include flex(row , null , center);
+                    text-decoration: none;
+                    margin-right: 0.5rem;
+                    background-color: $blueColor;
+                    font-size: 0.8rem;
+                    color: white;
+                    padding: 0.5rem 0.5rem;
+                    span{
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+        
+        >.total-places{
+            @include bodyPadding();
+            >.items{
+                @include flex(row , null , null , wrap);
+                @include item-slider();
+                margin-right: -1rem;
+                margin-left: -1rem;
+                >.item{
+                    width: calc(25% - 2rem);
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                    margin-bottom: 2rem;
+                }
+            }
+            >.see-more{
+                @include flex(row , center , center);
+                width: 100%;
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-size: 0.9rem;
+                    border: 1px dashed black;
+                    border-radius: 5px;
+                    padding: 0.5rem 1.25rem;
+                }
+            }
+        }
+    }
+    @include mobile{
+        >.filters-places{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 15%;
+                }
+                p{
+                    font-size: 0.75rem;
+                }
+            }
+
+            >.kinds{
+                padding-top: 1rem;
+                padding-bottom: 0;
+                margin-bottom: 1rem;
+                a{
+                    padding: 0.25rem 1.25rem;
+                    font-size: 0.75rem;
+                    i{
+                        font-size: 0.9rem;
+                    }
+                }
+                a.active{
+                    i.dot{
+                        font-size: 0.65rem;
+                    }
+                }
+            }
+            >.sorts-selected{
+                @include flex(column , flex-start , flex-start);
+                margin-bottom: 1rem;
+                >.sorts{
+                    margin-bottom: 1rem;
+                    flex-wrap: wrap;
+                    span{
+                        font-size: 0.75rem;
+                    }
+                    div{
+                        a{
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+                >.selected{
+                    flex-wrap: wrap;
+                    a{
+                        margin-right: 0;
+                        margin-left: 0.5rem;
+                        font-size: 0.75rem;
+                        padding: 0.25rem 0.5rem;
+                        span{
+                            margin-left: 0.75rem;
+                        }
+                    }
+                }
+            }
+            >.total-places{
+                >.items{
+                    margin-right: 0;
+                    margin-left: 0;
+                    >.item{
+                        width: 100%;
+                        margin-left: 0;
+                        margin-right: 0;
+                        margin-bottom: 1rem;
+                    }
+                }
+                >.see-more{
+                    a{
+                        font-size: 0.75rem;
+                    }
+                } 
+            }
+        }
+    }
+
+    @include tablet{
+        >.filters-places{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 10%;
+                }
+                p{
+                    font-size: 0.75rem;
+                }
+            }
+
+            >.kinds{
+                padding-top: 1rem;
+                padding-bottom: 0;
+                a{
+                    font-size: 0.75rem;
+                    i{
+                        font-size: 0.9rem;
+                    }
+                }
+                a.active{
+                    i.dot{
+                        font-size: 0.65rem;
+                    }
+                }
+            }
+
+            >.sorts-selected{
+                >.sorts{
+                    flex-wrap: wrap;
+                    span{
+                        font-size: 0.75rem;
+                    }
+                    div{
+                        a{
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+                >.selected{
+                    flex-wrap: wrap;
+                    a{
+                        font-size: 0.75rem;
+                        padding: 0.25rem 0.5rem;
+                    }
+                }
+            }
+            >.total-places{
+                >.items{
+                    >.item{
+                        width: calc(33.33% - 2rem);
+                    }
+                }
+                >.see-more{
+                    a{
+                        font-size: 0.75rem;
+                    }
+                } 
+            }
+        }
+    }
+}
+
+#filter-modal{
+    padding-top: 15%;
+    .uk-modal-body{
+        border-radius: 15px;
+        >.title{
+            @include flex(row , space-between , center);
+            margin-bottom: 2rem;
+            >div{
+                @include flex(row , null , center);
+                i{
+                    font-size: 1.5rem;
+                    color: black;
+                    margin-left: 0.5rem;
+                }
+                h3{
+                    font-size: 1.1rem;
+                    color: black;
+                    font-weight: 500;
+                }
+            }
+            button{
+                position: inherit;
+                background-color: $backgroundColor;
+                border-radius: 5px;
+                @include flex(row , center , center);
+                padding: 0.5rem;
+                svg{
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+        >.items{
+            margin-bottom: 5rem;
+            >div{
+                @include flex(row , space-between , center);
+                margin-bottom: 1.5rem;
+                label{
+                    font-size: 0.9rem;
+                    color: black;
+                }
+            }
+            >div.radio{
+                @include flex(column , flex-start , flex-start);
+                margin-top: 2rem;
+                span{
+                    font-size: 0.9rem;
+                    color: black;
+                    font-weight: 500;
+                }
+                >div{
+                    margin-top: 1.5rem;
+                    @include flex(row , null , null ,wrap);
+                    margin-left: -0.75rem;
+                    margin-right: -0.75rem;
+                    >div{
+                        margin-left: 0.75rem;
+                        margin-right: 0.75rem;
+                    }
+                }
+            }
+        }
+        >.actions{
+            @include flex(row , space-between , center);
+            .cancel{
+                text-decoration: none;
+                color: #F80738;
+                font-size: 0.9rem;
+            }
+            .submit{
+                text-decoration: none;
+                color: $blueColor;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    @include mobile{
+        .uk-modal-body{
+            padding: 1.5rem;
+            >.title{
+                >div{
+                    i{
+                        font-size: 1.2rem;
+                    }
+                    h3{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+            >.items{
+                margin-bottom: 3rem;
+                >div{
+                    label{
+                        font-size: 0.75rem;
+                    }
+                }
+                >div.radio{
+                    span{
+                        font-size: 0.75rem;
+                    }
+                    >div{
+                        margin-top: 1rem;
+                    }
+                }
+            }
+            >.actions{
+                .cancel{
+                    font-size: 0.75rem;
+                }
+                .submit{
+                    font-size: 0.75rem;
+                }
+            }
+        }
+    }
+}

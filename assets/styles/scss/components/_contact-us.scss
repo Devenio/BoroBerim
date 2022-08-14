@@ -1,0 +1,328 @@
+.main{
+    >.contact-us{
+        >.title{
+            margin-top: -2rem;
+            background-image: url('../../../src/images/footer.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        
+            @include flex(column , center , center);
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            margin-bottom: 2rem;
+            h1{
+                font-size: 1.2rem;
+                color: black;
+                font-weight: 600;
+            }
+            hr{
+                border-width: 5px;
+                border-color: $blueColor;
+                width: 5%;
+            }
+            p{
+                font-size: 0.9rem;
+                color: black;
+            }
+        }
+
+        >.body{
+            @include boxshadow();
+            border-radius: 15px;
+            @include flex(column);
+            width: 60%;
+            margin: auto;
+            padding: 1.5rem;
+            >.text{
+                border-bottom: 1px solid rgba(black , 0.1);
+                margin-bottom: 1.5rem;
+                h3{
+                    font-size: 1rem;
+                    color: black;
+                    font-weight: 500;
+                }
+                hr{
+                    border-color: $blueColor;
+                    border-width: 3px;
+                    width: 5%;
+                }
+                >.items{
+                    @include flex(row , space-between , center , wrap);
+                    >div{
+                        width: 45%;
+                        max-width: 45%;
+                        margin-bottom: 2rem;
+                        @include flex(row , null , center);
+                        i{
+                            margin-left: 0.75rem;
+                            color: $blueColor;
+                            font-size: 1.8rem;
+                        }
+                        >div{
+                            @include flex(column);
+                            span{
+                                font-size: 0.9rem;
+                                color: black;
+                                font-weight: 500;
+                                margin-bottom: 0.25rem;
+                            }
+                            p{
+                                margin-top: 0.25rem;
+                                font-size: 0.9rem;
+                                color: black;
+                                line-height: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+            >.form{
+                h3{
+                    font-size: 1rem;
+                    color: black;
+                    font-weight: 500;
+                }
+                hr{
+                    border-color: $blueColor;
+                    border-width: 3px;
+                    width: 5%;
+                }
+                form{
+                    @include flex(row , space-between , center , wrap);
+                    >.form-group{
+                        width: 45%;
+                        max-width: 45%;
+                        @include flex(column);
+                        margin-bottom: 1.5rem;
+                        label{
+                            margin-bottom: 0.75rem;
+                            font-size: 0.9rem;
+                            color: black;
+                        }
+                        input{
+                            border: 1px solid rgba(black , 0.1);
+                            border-radius: 5px;
+                            padding: 0.75rem;
+                            font-size: 0.9rem;
+                        }
+                        input:focus{
+                            border: 1px solid $blueColor;
+                            outline: 0;
+                        }
+                        
+                    }
+                    >.description{
+                        width: 100%;
+                        max-width: 100%;
+                        textarea{
+                            width: calc(100% - 1rem);
+                            border-radius: 5px;
+                            border: 1px solid rgba(black , 0.1);
+                            padding: 0.5rem;
+                            font-size: 0.9rem;
+                        }
+                        textarea:focus{
+                            border: 1px solid $blueColor;
+                            outline: 0;
+                        }
+                    }
+                    >.submit{
+                        button{
+                            font-size: 0.9rem;
+                            font-family: shabnam;
+                            cursor: pointer;
+                            background-color: $blueColor;
+                            border: 1px solid $blueColor;
+                            color: white;
+                            padding: 0.5rem 0.75rem;
+                            border-radius: 5px;
+                            transition: all 0.3s;
+                        }
+                        button:hover{
+                            background-color: white;
+                            color: $blueColor;
+                        }
+                    }
+                }
+            }
+        }   
+    }
+
+    @include mobile{
+        >.contact-us{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 15%;
+                }
+                p{
+                    font-size: 0.75rem;
+                }
+            }
+
+            >.body{
+                width: 85%;
+                padding: 1rem;
+                >.text{
+                    h3{
+                        font-size: 0.9rem;
+                    }
+                    hr{
+                        width: 15%;
+                    }
+                    >.items{
+                        >div{
+                            width: 100%;
+                            max-width: 100%;
+                            margin-bottom: 1.5rem;
+                            i{
+                                font-size: 1.5rem;
+                            }
+                            >div{
+                                @include flex(row , null ,center);
+                                span{
+                                    font-size: 0.75rem;
+                                    margin-bottom: 0;
+                                    margin-left: 0.25rem;
+                                    line-height: 1.5rem;
+                                }
+                                p{
+                                    margin-top: 0;
+                                    margin-right: 0.25rem;
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                >.form{
+                    h3{
+                        font-size: 0.9rem;
+                    }
+                    hr{
+                        width: 15%;
+                    }
+                    form{
+                        >.form-group{
+                            width: 100%;
+                            max-width: 100%;
+                            label{
+                                margin-bottom: 0.5rem;
+                                font-size: 0.75rem;
+                            }
+                            input{
+                                padding: 0.5rem;
+                                font-size: 0.75rem;
+                            }
+                            
+                        }
+                        >.description{
+                            textarea{
+                                font-size: 0.75rem;
+                            }
+                        }
+                        >.submit{
+                            button{
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet{
+        >.contact-us{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 10%;
+                }
+                p{
+                    font-size: 0.75rem;
+                }
+            }
+            >.body{
+                width: 80%;
+                >.text{
+                    h3{
+                        font-size: 0.9rem;
+                    }
+                    hr{
+                        width: 10%;
+                    }
+                    >.items{
+                        >div{
+                            margin-bottom: 1.5rem;
+                            i{
+                                font-size: 1.5rem;
+                            }
+                            >div{
+                                span{
+                                    font-size: 0.75rem;
+                                    line-height: 1.5rem;
+                                }
+                                p{
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                >.form{
+                    h3{
+                        font-size: 0.9rem;
+                    }
+                    hr{
+                        width: 10%;
+                    }
+                    form{
+                        >.form-group{
+                            label{
+                                margin-bottom: 0.5rem;
+                                font-size: 0.75rem;
+                            }
+                            input{
+                                padding: 0.5rem;
+                                font-size: 0.75rem;
+                            }
+                            
+                        }
+                        >.description{
+                            textarea{
+                                font-size: 0.75rem;
+                            }
+                        }
+                        >.submit{
+                            button{
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include largeDevices{
+        >.contact-us{
+            >.body{
+                width: 70%;
+            }
+        }
+    }
+}

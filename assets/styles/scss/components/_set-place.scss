@@ -1,0 +1,336 @@
+.main{
+    >.set-place{
+        >.title{
+            margin-top: -2rem;
+            margin-bottom: 2rem;
+            background-image: url('../../../src/images/footer.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        
+            @include flex(column , center , center);
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            h1{
+                font-size: 1.2rem;
+                color: black;
+                font-weight: 600;
+            }
+            hr{
+                border-width: 5px;
+                border-color: $blueColor;
+                width: 5%;
+            }
+        }
+        >.body{
+            @include flex(row , space-between , null ,wrap);
+            @include bodyPadding();
+            >aside{
+                width: 30%;
+                max-width: 30%;
+                background-color: #F5F5F5;
+                padding: 1.5rem 1rem;
+                border-radius: 25px;
+                align-self: flex-start;
+                h3{
+                    font-size: 1.1rem;
+                    color: black;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
+                }
+                p{
+                    color: black;
+                    font-size: 0.9rem;
+                    line-height: 2rem;
+                    text-align: justify;
+                }
+            }
+            >div{
+                width: 65%;
+                max-width: 65%;
+                form{
+                    >.title{
+                        @include flex(row , space-between , center , wrap);
+                        border-bottom: 1px solid black;
+                        padding-bottom: 1rem;
+                        margin-bottom: 2.5rem;
+                        >.right{
+                            h3{
+                                font-size: 1.1rem;
+                                color: black;
+                                font-weight: 500;
+                                margin-bottom: 0.75rem;
+                            }
+                            p{
+                                font-size: 0.9rem;
+                                color: black;
+                            }
+                        }
+                        >.left{
+                            button{
+                                font-family: shabnam;
+                                font-size: 0.9rem;
+                                color: white;
+                                background-color: $blueColor;
+                                border: 1px solid $blueColor;
+                                border-radius: 5px;
+                                padding: 0.75rem 2.5rem;
+                                cursor: pointer;
+                                transition: all 0.3s;
+                            }
+                            button:hover{
+                                background-color: white;
+                                color: $blueColor;
+                            }
+                        }
+                    }
+                    >.row{
+                        @include flex(row , space-between , null ,wrap);
+                        margin-bottom: 1.5rem;
+                        >.form-group{
+                            @include flex(column);
+                            label{
+                                font-size: 0.9rem;
+                                color: black;
+                                margin-bottom: 0.75rem;
+                            }
+                            input{
+                                padding: 0.75rem;
+                                border-radius: 8px;
+                                border: 1px solid rgba(black , 0.1);
+                                font-size: 0.9rem;
+                            }
+                            input:focus{
+                                outline: 0;
+                                border-color: $blueColor;
+                            }
+                        }
+                        >.w-50{
+                            width: 49%;
+                            max-width: 49%;
+                        }
+                        >.w-25{
+                            width: 24%;
+                            max-width: 24%;
+                        }
+                        >.w-100{
+                            width: 100%;
+                            max-width: 100%;
+                        }
+                    }
+                    >.options{
+                        margin-top: 2.5rem;
+                        p{
+                            font-size: 0.9rem;
+                            color: black;
+                            margin-bottom: 1rem;
+                            font-weight: 500;
+                        }
+                        >.items{
+                            @include flex(row , null , center , wrap);
+                            >div{
+                                @include flex(row , null , center);
+                                width: 25%;
+                                max-width: 25%;
+                                margin-bottom: 1.5rem;
+                                input{
+                                    margin-left: 0.25rem;
+                                }
+                                >label{
+                                    @include flex(row , null , center);
+                                    color: black;
+                                    font-size: 0.9rem;
+                                    img{
+                                        width: 2.5rem;
+                                        height: 2.5rem;
+                                        margin-left: 0.5rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        >.set-place{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 15%;
+                }
+            }
+            >.body{
+                >aside{
+                    width: 100%;
+                    max-width: 100%;
+                    margin-bottom: 1.5rem;
+                    h3{
+                        font-size: 0.9rem;
+                        margin-bottom: 0.75rem;
+                    }
+                    p{
+                        font-size: 0.75rem;
+                    }
+                }
+                >div{
+                    width: 100%;
+                    max-width: 100%;
+                    form{
+                        >.title{
+                            margin-bottom: 2rem;
+                            >.right{
+                                margin-bottom: 1rem;
+                                h3{
+                                    font-size: 0.9rem;
+                                    margin-bottom: 0.5rem;
+                                }
+                                p{
+                                    font-size: 0.75rem;
+                                    line-height: 1.5rem;
+                                }
+                            }
+                            >.left{
+                                margin: auto;
+                                button{
+                                    font-size: 0.75rem;
+                                    padding: 0.5rem 1.5rem;
+                                }
+                            }
+                        }
+                        >.row{
+                            margin-bottom: 0;
+                            >.form-group{
+                                width: 100% !important;
+                                max-width: 100% !important;
+                                margin-bottom: 1.5rem;
+                                label{
+                                    font-size: 0.75rem;
+                                    margin-bottom: 0.5rem;
+                                }
+                                input{
+                                    padding: 0.5rem;
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+                        >.options{
+                            margin-top: 0.5rem;
+                            p{
+                                font-size: 0.75rem;
+                                margin-bottom: 1rem;
+                            }
+                            >.items{
+                                >div{
+                                    width: 33%;
+                                    max-width: 33%;
+                                    >label{
+                                        font-size: 0.75rem;
+                                        img{
+                                            width: 2rem;
+                                            height: 2rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet{
+        >.set-place{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 15%;
+                }
+            }
+            >.body{
+                >aside{
+                    width: 100%;
+                    max-width: 100%;
+                    margin-bottom: 1.5rem;
+                    h3{
+                        font-size: 0.9rem;
+                        margin-bottom: 0.75rem;
+                    }
+                    p{
+                        font-size: 0.75rem;
+                    }
+                }
+                >div{
+                    width: 100%;
+                    max-width: 100%;
+                    form{
+                        >.title{
+                            margin-bottom: 2rem;
+                            >.right{
+                                h3{
+                                    font-size: 0.9rem;
+                                    margin-bottom: 0.5rem;
+                                }
+                                p{
+                                    font-size: 0.75rem;
+                                    line-height: 1.5rem;
+                                }
+                            }
+                            >.left{
+                                button{
+                                    font-size: 0.75rem;
+                                    padding: 0.5rem 1.5rem;
+                                }
+                            }
+                        }
+                        >.row{
+                            >.form-group{
+                                label{
+                                    font-size: 0.75rem;
+                                    margin-bottom: 0.5rem;
+                                }
+                                input{
+                                    padding: 0.5rem;
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+                        >.options{
+                            margin-top: 2rem;
+                            p{
+                                font-size: 0.75rem;
+                                margin-bottom: 1rem;
+                            }
+                            >.items{
+                                >div{
+                                    >label{
+                                        font-size: 0.75rem;
+                                        img{
+                                            width: 2rem;
+                                            height: 2rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

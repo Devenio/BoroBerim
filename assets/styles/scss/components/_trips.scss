@@ -1,0 +1,1438 @@
+.main {
+    >.my-trips {
+        >.title {
+            margin-top: -2rem;
+            background-image: url('../../../src/images/footer.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            @include flex(column, center, center);
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+
+            h1 {
+                font-size: 1.2rem;
+                color: black;
+                font-weight: 600;
+            }
+
+            hr {
+                border-width: 5px;
+                border-color: $blueColor;
+                width: 5%;
+            }
+
+            div {
+                @include flex(row, null, center);
+
+                a {
+                    text-decoration: none;
+                    font-size: 0.9rem;
+                    color: black;
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                    transition: all 0.3s;
+                }
+
+                a.active {
+                    font-weight: 500;
+                }
+
+                a:hover {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        >.items {
+            @include bodyPadding();
+            
+            >.item {
+                @include flex(row, space-between, null , wrap);
+                margin-top: 2rem;
+                border-bottom: 1px solid rgba(black , 0.1);
+                >.right {
+                    @include flex(row);
+                    width: 60%;
+                    max-width: 60%;
+                    padding-bottom: 1rem;
+                    margin-bottom: 0.5rem;
+                    >.img {
+                        border-radius: 15px;
+                        margin-left: 2rem;
+
+                        img {
+                            width: 18rem;
+                            height: 20rem;
+                            border-radius: 15px;
+                            object-fit: cover;
+                        }
+                    }
+
+                    >.infos {
+                        @include flex(column);
+
+                        h3 {
+                            font-size: 1.3rem;
+                            color: black;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        >.locate {
+                            @include flex(row, null, center);
+                            margin-bottom: 1rem;
+
+                            i {
+                                color: blue;
+                                font-size: 1.1rem;
+                                margin-left: 0.5rem;
+                            }
+
+                            p {
+                                opacity: 0.7;
+                                font-size: 1rem;
+                                color: black;
+                            }
+                        }
+
+                        >.rate {
+                            @include flex(row, null, center);
+                            margin-bottom: 1rem;
+
+                            span.icon {
+                                background-color: $blueColor;
+                                border-radius: 5px;
+                                padding: 0.15rem;
+                                @include flex(row, center, center);
+                                margin-left: 0.25rem;
+
+                                i {
+                                    color: white;
+                                    font-size: 0.75rem;
+                                }
+                            }
+
+                            span {
+                                color: black;
+                                font-size: 0.9rem;
+                                font-weight: 500;
+                            }
+                        }
+
+                        >.text {
+                            p.red {
+                                margin-bottom: 1rem;
+
+                                i {
+                                    font-size: 1rem;
+                                    color: #F30101;
+                                }
+
+                                font-size: 0.9rem;
+                                opacity: 0.7;
+                                color: black;
+                            }
+
+                            p.blue {
+                                margin-bottom: 1rem;
+
+                                i {
+                                    font-size: 1rem;
+                                    color: $blueColor;
+                                }
+
+                                font-size: 0.9rem;
+                                opacity: 0.7;
+                                color: black;
+                            }
+                        }
+
+                        >.host {
+                            @include flex(row, null, center);
+
+                            img {
+                                border-radius: 50%;
+                                width: 3rem;
+                                height: 3rem;
+                                margin-left: 0.5rem;
+                                border: 1px solid rgba($color: black, $alpha: 0.3);
+                            }
+
+                            p {
+                                color: black;
+                                font-size: 0.9rem;
+                                margin-left: 1rem;
+                            }
+
+                            a {
+                                @include flex(row, center, center);
+                                text-decoration: none;
+                                border-radius: 5px;
+
+                                i {
+                                    color: $blueColor;
+                                    font-size: 1rem;
+                                    margin-left: 0.25rem;
+                                }
+
+                                font-size: 0.8rem;
+                                color: black;
+                                padding: 0.25rem 0.5rem;
+                                background-color: #EBEBEB;
+                            }
+                        }
+
+                        >.date {
+                            @include flex(row);
+                            margin-top: auto;
+                            >.enter {
+                                margin-left: 1rem;
+                            }
+
+                            >.enter,
+                            >.exit {
+                                @include flex(row, null, center);
+                                border: 1px solid rgba(black, 0.1);
+                                border-radius: 5px;
+                                padding: 0.5rem;
+
+                                i {
+                                    color: black;
+                                    opacity: 0.5;
+                                    font-size: 1rem;
+                                    margin-left: 1rem;
+                                }
+
+                                >div.form-group {
+                                    @include flex(column);
+
+                                    label {
+                                        color: black;
+                                        font-size: 0.9rem;
+                                        margin-bottom: 0.5rem;
+                                    }
+
+                                    input {
+                                        border: 0;
+                                        font-size: 0.9rem;
+                                        font-weight: 500;
+                                        background-color: inherit;
+                                    }
+
+                                    input:focus {
+                                        outline: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                >.left {
+                    @include flex(column);
+                    width: 35%;
+                    max-width: 35%;
+                    padding-right: 3rem;
+                    border-right: 1px solid rgba(black , 0.1);
+                    padding-bottom: 1rem;
+                    margin-bottom: 0.5rem;
+                    >.night-price-discount {
+                        @include flex(row, space-between, null);
+                        margin-bottom: 1.5rem;
+
+                        >.discount {
+                            p {
+                                font-size: 1rem;
+                                color: black;
+                                text-decoration: line-through;
+                                margin-bottom: 0.5rem;
+                            }
+
+                            span {
+                                background-color: rgba($color: #FF0000, $alpha: 0.1);
+                                color: #FF0000;
+                                border-radius: 5px;
+                                font-size: 0.75rem;
+                                padding: 0.25rem;
+                            }
+                        }
+
+                        >.night-price {
+                            @include flex(column);
+
+                            p {
+                                font-size: 1.1rem;
+                                color: black;
+                                font-weight: 500;
+                                margin-bottom: 0.5rem;
+                            }
+
+                            span {
+                                font-size: 0.9rem;
+                                opacity: 0.7;
+                                color: black;
+                                align-self: flex-end;
+                            }
+                        }
+                    }
+
+                    >.price {
+                        padding: 1rem;
+                        background-color: #F5F5F5;
+                        border-radius: 5px;
+
+                        >.calc {
+                            margin-bottom: 1.5rem;
+                            @include flex(row, space-between, center);
+
+                            >div {
+                                span {
+                                    font-size: 1rem;
+                                    color: black;
+                                    opacity: 0.7;
+                                }
+
+                                span.stroke {
+                                    margin-left: 0.25rem;
+                                    margin-right: 0.25rem;
+
+                                    svg {
+                                        width: 10px;
+                                        height: 10px;
+                                    }
+                                }
+                            }
+
+                            p {
+                                font-size: 1rem;
+                                color: black;
+                                opacity: 0.7;
+                            }
+                        }
+
+                        >.with {
+                            margin-bottom: 1.5rem;
+                            @include flex(row, space-between, center);
+
+                            p {
+                                font-size: 1rem;
+                                color: black;
+                                opacity: 0.7;
+                            }
+                        }
+
+                        >.total-price {
+                            @include flex(row, space-between, center);
+
+                            span {
+                                font-size: 1rem;
+                                color: black;
+                                font-weight: 600;
+                            }
+
+                            p {
+                                font-size: 1rem;
+                                color: black;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                    >.submit{
+                        @include flex(row,space-between , center);
+                        margin-top: auto;
+                        a.continue{
+                            text-decoration: none;
+                            text-align: center;
+                            background-color: rgba($color: $blueColor, $alpha: 0.05);
+                            color: $blueColor;
+                            font-size: 0.9rem;
+                            border-radius: 5px;
+                            border: 1px solid $blueColor;
+                            width: 48%;
+                            padding-top: 1rem;
+                            padding-bottom: 1rem;
+                            transition: all 0.3s;
+                        }
+                        a.continue:hover{
+                            background-color: rgba($color: $blueColor, $alpha: 1);
+                            color: white;
+                        }
+                        a.cancel{
+                            text-decoration: none;
+                            text-align: center;
+                            width: 48%;
+                            padding-top: 1rem;
+                            padding-bottom: 1rem;
+                            font-size: 0.9rem;
+                            color:  #FC0000;
+                            border-radius: 5px;
+                            background-color: rgba($color: #FC0000, $alpha: 0.1);
+                            border: 1px solid rgba($color: #FC0000, $alpha: 0.05);
+                            transition: all 0.3s;
+                        }
+                        a.cancel:hover{
+                            background-color: rgba($color: #FC0000, $alpha: 0.6);
+                            color: white;
+
+                        }
+                        a.waiting{
+                            text-decoration: none;
+                            text-align: center;
+                            width: 48%;
+                            padding-top: 1rem;
+                            padding-bottom: 1rem;
+                            font-size: 0.9rem;
+                            color: black;
+                            background-color: #FFC107;
+                            border: 1px solid#FFC107;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        >.my-trips{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 15%;
+                }
+                p{
+                    font-size: 0.75rem;
+                }
+
+                div {
+                    a {
+                        font-size: 0.75rem;
+                        margin-left: 0.5rem;
+                        margin-right: 0.5rem;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+            >.items{
+                >.item {
+                    margin-top: 1.5rem;
+                    >.right {
+                        @include flex(row , null , null , wrap);
+                        width: 100%;
+                        max-width: 100%;
+                        padding-bottom: 1.5rem;
+                        margin-bottom: 0;
+                        >.img {
+                            margin-left: 0;
+                            margin-bottom: 1rem;
+
+                            img {
+                                width: 100%;
+                                height: 15rem;
+                            }
+                        }
+    
+                        >.infos {
+                            h3 {
+                                font-size: 1.1rem;
+                            }
+    
+                            >.locate {
+                                i {
+                                    font-size: 1rem;
+                                }
+                                p {
+                                    font-size: 0.9rem;
+                                }
+                            }
+    
+                            >.text {
+                                p.red {
+                                    font-size: 0.75rem;
+                                }
+    
+                                p.blue {
+                                    font-size: 0.75rem;
+                                }
+                            }
+    
+                            >.host {
+                                img {
+                                    width: 2rem;
+                                    height: 2rem;
+                                }
+    
+                                p {
+                                    font-size: 0.75rem;
+                                }
+    
+                                a {
+                                    font-size: 0.75rem;
+                                }
+                            }
+    
+                            >.date {
+                                @include flex(row , space-between , null , wrap);
+                                margin-top: 1rem;
+                                >.enter {
+                                    margin-left: 0;
+                                }
+    
+                                >.enter,
+                                >.exit {
+                                    width: 42%;
+                                    >div.form-group {
+                                        width: 100%;
+                                        label {
+                                            font-size: 0.75rem;
+                                        }
+    
+                                        input {
+                                            font-size: 0.75rem;
+                                            width: 90%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    >.left {
+                        width: 100%;
+                        max-width: 100%;
+                        padding-right: 0;
+                        border-right: 0;
+                        padding-top: 1.5rem;
+                        border-top: 1px solid rgba(black , 0.1);
+                        padding-bottom: 1.5rem;
+                        margin-bottom: 0;
+                        >.night-price-discount {
+                            >.discount {
+                                p {
+                                    font-size: 0.9rem;
+                                }
+                            }
+    
+                            >.night-price {
+                                p {
+                                    font-size: 1rem;
+                                }
+                                span {
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+    
+                        >.price {
+                            >.calc {
+                                margin-bottom: 1rem;
+                                >div {
+                                    span {
+                                        font-size: 0.9rem;
+                                    }
+    
+                                    span.stroke {
+                                        svg {
+                                            width: 8px;
+                                            height: 8px;
+                                        }
+                                    }
+                                }
+    
+                                p {
+                                    font-size: 0.9rem;
+                                }
+                            }
+    
+                            >.with {
+                                margin-bottom: 1rem;
+                                p {
+                                    font-size: 0.9rem;
+                                }
+                            }
+    
+                            >.total-price {
+                                span {
+                                    font-size: 0.9rem;
+                                }
+    
+                                p {
+                                    font-size: 0.9rem;
+                                }
+                            }
+                        }
+    
+                        >.submit{
+                            margin-top: 1rem;
+                            a.continue{
+                                font-size: 0.75rem;
+                                padding-top: 0.75rem;
+                                padding-bottom: 0.75rem;
+                            }
+                            a.cancel{
+                                padding-top: 0.75rem;
+                                padding-bottom: 0.75rem;
+                                font-size: 0.75rem;
+                            }
+                            a.waiting{
+                                padding-top: 0.75rem;
+                                padding-bottom: 0.75rem;
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet{
+        >.my-trips{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 15%;
+                }
+                p{
+                    font-size: 0.75rem;
+                }
+
+                div {
+                    a {
+                        font-size: 0.75rem;
+                        margin-left: 0.5rem;
+                        margin-right: 0.5rem;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+            >.items{
+                >.item{
+                    margin-top: 1.5rem;
+                    >.right {
+                        @include flex(row , null , null);
+                        width: 100%;
+                        max-width: 100%;
+                        padding-bottom: 1.5rem;
+                        margin-bottom: 0;
+                        >.img {
+                            margin-left: 1rem;
+
+                            img {
+                                width: 20rem;
+                                height: 100%;
+                            }
+                        }
+    
+                        >.infos {
+                            h3 {
+                                font-size: 1.1rem;
+                            }
+    
+                            >.locate {
+                                i {
+                                    font-size: 1rem;
+                                }
+                                p {
+                                    font-size: 0.9rem;
+                                }
+                            }
+    
+                            >.text {
+                                p.red {
+                                    font-size: 0.75rem;
+                                }
+    
+                                p.blue {
+                                    font-size: 0.75rem;
+                                }
+                            }
+    
+                            >.host {
+                                img {
+                                    width: 2rem;
+                                    height: 2rem;
+                                }
+    
+                                p {
+                                    font-size: 0.75rem;
+                                }
+    
+                                a {
+                                    font-size: 0.75rem;
+                                }
+                            }
+    
+                            >.date {
+                                @include flex(row , space-between , null , wrap);
+                                margin-top: 1rem;
+                                >.enter {
+                                    margin-left: 0;
+                                }
+    
+                                >.enter,
+                                >.exit {
+                                    width: 42%;
+                                    >div.form-group {
+                                        width: 100%;
+                                        label {
+                                            font-size: 0.75rem;
+                                        }
+    
+                                        input {
+                                            font-size: 0.75rem;
+                                            width: 90%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    >.left {
+                        width: 100%;
+                        max-width: 100%;
+                        padding-right: 0;
+                        border-right: 0;
+                        padding-top: 1.5rem;
+                        border-top: 1px solid rgba(black , 0.1);
+                        padding-bottom: 1.5rem;
+                        margin-bottom: 0;
+                        >.night-price-discount {
+                            >.discount {
+                                p {
+                                    font-size: 0.9rem;
+                                }
+                            }
+    
+                            >.night-price {
+                                p {
+                                    font-size: 1rem;
+                                }
+                                span {
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+    
+                        >.price {
+                            >.calc {
+                                margin-bottom: 1rem;
+                                >div {
+                                    span {
+                                        font-size: 0.9rem;
+                                    }
+    
+                                    span.stroke {
+                                        svg {
+                                            width: 8px;
+                                            height: 8px;
+                                        }
+                                    }
+                                }
+    
+                                p {
+                                    font-size: 0.9rem;
+                                }
+                            }
+    
+                            >.with {
+                                margin-bottom: 1rem;
+                                p {
+                                    font-size: 0.9rem;
+                                }
+                            }
+    
+                            >.total-price {
+                                span {
+                                    font-size: 0.9rem;
+                                }
+    
+                                p {
+                                    font-size: 0.9rem;
+                                }
+                            }
+                        }
+    
+                        >.submit{
+                            margin-top: 1rem;
+                            a.continue{
+                                font-size: 0.75rem;
+                                padding-top: 0.75rem;
+                                padding-bottom: 0.75rem;
+                            }
+                            a.cancel{
+                                padding-top: 0.75rem;
+                                padding-bottom: 0.75rem;
+                                font-size: 0.75rem;
+                            }
+                            a.waiting{
+                                padding-top: 0.75rem;
+                                padding-bottom: 0.75rem;
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include largeDevices{
+        >.my-trips{
+            >.items{
+                >.item{
+                    >.right {
+                        @include flex(row , null , null);
+                        width: 100%;
+                        max-width: 100%;
+                        padding-bottom: 2rem;
+                        margin-bottom: 0;
+                        >.img {
+                            margin-left: 2rem;
+
+                            img {
+                                width: 20rem;
+                                height: 100%;
+                            }
+                        }
+    
+                        >.infos {
+                            >.date {
+                                @include flex(row , space-between , null , wrap);
+                                margin-top: 1rem;
+                                >.enter {
+                                    margin-left: 0;
+                                }
+    
+                                >.enter,
+                                >.exit {
+                                    width: 42%;
+                                    >div.form-group {
+                                        width: 100%;
+    
+                                        input {
+                                            width: 90%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    >.left {
+                        width: 100%;
+                        max-width: 100%;
+                        padding-right: 0;
+                        border-right: 0;
+                        padding-top: 2rem;
+                        border-top: 1px solid rgba(black , 0.1);
+                        padding-bottom: 2rem;
+                        margin-bottom: 0;
+                        >.submit{
+                            margin-top: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.factor{
+    position: fixed;
+    top: 0%;
+    left: -70%;
+    width: 35%;
+    height: 100%;
+    z-index: 1000;
+    transition: .5s;
+    background-color: white;
+    padding: 1.5rem;
+    overflow-y: scroll;
+    @include boxshadow();
+
+    >h2{
+        font-size: 1.1rem;
+        color: black;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    >img{
+        width: 100%;
+        border-radius: 15px;
+        height: 15rem;
+        object-fit: cover;
+    }
+    >.code{
+        @include flex(row , space-between , center);
+        margin-top: 1rem;
+        >.right{
+            @include flex(row , null , center);
+            span{
+                font-size: 1rem;
+                color: black;
+                margin-left: 0.5rem;
+            }
+            p{
+                color: $blueColor;
+                font-size: 1rem;
+            }
+        }
+        >.left{
+            background-color: rgba($color: #FFC117, $alpha: 0.15);
+            color: #FFC117;
+            font-size: 0.9rem;
+            padding: 0.25rem 0.75rem;
+        }
+    }
+
+    >.date {
+        margin-top: 1rem;
+        padding-bottom: 2rem;
+        @include flex(row , space-between , center);
+
+        >.enter,
+        >.exit {
+            @include flex(row, null, center);
+            border: 1px solid rgba(black, 0.1);
+            border-radius: 5px;
+            padding: 0.5rem;
+            width: 45%;
+
+            i {
+                color: black;
+                opacity: 0.5;
+                font-size: 1rem;
+                margin-left: 1rem;
+            }
+
+            >div.form-group {
+                @include flex(column);
+
+                label {
+                    color: black;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                input {
+                    border: 0;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    background-color: inherit;
+                }
+
+                input:focus {
+                    outline: 0;
+                }
+            }
+        }
+    }
+
+    >.bill{
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        h3{
+            font-size: 1rem;
+            color: black;
+            margin-bottom: 0.5rem;
+        }
+        table{
+            width: 100%;
+            thead{
+                background-color: $backgroundColor;
+                th{
+                    padding: 0.75rem 0.5rem;
+                    color: black;
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                }
+            }
+            tbody{
+                tr{
+                    border-bottom: 1px solid rgba(black , 0.1);
+                }
+                td{
+                    padding: 0.75rem 0.5rem;
+                    font-size: 0.9rem;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    >.price-discount{
+        >.night-price-discount {
+            @include flex(row, space-between, null);
+            margin-bottom: 1.5rem;
+
+            >.discount {
+                p {
+                    font-size: 1rem;
+                    color: black;
+                    text-decoration: line-through;
+                    margin-bottom: 0.5rem;
+                }
+
+                span {
+                    background-color: rgba($color: #FF0000, $alpha: 0.1);
+                    color: #FF0000;
+                    border-radius: 5px;
+                    font-size: 0.75rem;
+                    padding: 0.25rem;
+                }
+            }
+
+            >.night-price {
+                @include flex(column);
+
+                p {
+                    font-size: 1.1rem;
+                    color: black;
+                    font-weight: 500;
+                    margin-bottom: 0.5rem;
+                }
+
+                span {
+                    font-size: 0.9rem;
+                    opacity: 0.7;
+                    color: black;
+                    align-self: flex-end;
+                }
+            }
+        }
+
+        >.price {
+            padding: 1rem;
+            background-color: #F5F5F5;
+            border-radius: 5px;
+
+            >.calc {
+                margin-bottom: 1.5rem;
+                @include flex(row, space-between, center);
+
+                >div {
+                    span {
+                        font-size: 1rem;
+                        color: black;
+                        opacity: 0.7;
+                    }
+
+                    span.stroke {
+                        margin-left: 0.25rem;
+                        margin-right: 0.25rem;
+
+                        svg {
+                            width: 10px;
+                            height: 10px;
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 1rem;
+                    color: black;
+                    opacity: 0.7;
+                }
+            }
+
+            >.with {
+                margin-bottom: 1.5rem;
+                @include flex(row, space-between, center);
+
+                p {
+                    font-size: 1rem;
+                    color: black;
+                    opacity: 0.7;
+                }
+            }
+
+            >.total-price {
+                @include flex(row, space-between, center);
+
+                span {
+                    font-size: 1rem;
+                    color: black;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 1rem;
+                    color: black;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        >form{
+            margin-top: 1.5rem;
+            @include flex(column);
+            label{
+                font-size: 0.9rem;
+                color: black;
+                margin-bottom: 0.5rem;
+            }
+            div{
+                @include flex(row , null , center);
+                input{
+                    background-color: #F5F5F5;
+                    font-size: 0.9rem;
+                    width: 100%;
+                    width: calc(100% - 1.5rem);
+                    border: 1px solid #F5F5F5;
+                    padding: 0.75rem;
+                    border-radius: 5px;
+                }
+                input:focus{
+                    outline: 0;
+                    border: 1px solid $blueColor;
+                }
+                button{
+                    left: 5%;
+                    background-color: inherit;
+                    font-family: shabnam;
+                    color: $blueColor;
+                    font-size: 0.9rem;
+                    margin-right: -10%;
+                    cursor: pointer;
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    >.submit{
+        margin-top: 1.5rem;
+        margin-bottom: 3rem;
+        @include flex();
+        a{
+            text-align: center;
+            text-decoration: none;
+            width: 100%;
+            font-size: 0.9rem;
+            background-color: $blueColor;
+            border: 1px solid $blueColor;
+            color: white;
+            border-radius: 5px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            transition: all 0.3s;
+        }
+        a:hover{
+            background-color: white;
+            color: $blueColor;
+        }
+    }
+
+    @include mobile{
+        left: -85%;
+        width: 75%;
+        padding: 1rem;
+
+        >h2{
+            font-size: 0.9rem;
+        }
+        >img{
+            height: 12rem;
+        }
+
+        >.code{
+            >.right{
+                span{
+                    font-size: 0.8rem;
+                }
+                p{
+                    font-size: 0.8rem;
+                }
+            }
+            >.left{
+                font-size: 0.75rem;
+            }
+        }
+
+        >.date {
+            @include flex(row , space-between , center ,wrap);
+            >.enter{
+                margin-bottom: 1rem;
+            }
+            >.enter,
+            >.exit {
+                width: 100%;
+    
+                >div.form-group {
+                    label {
+                        font-size: 0.75rem;
+                    }
+    
+                    input {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+
+        >.bill{
+            h3{
+                font-size: 0.9rem;
+            }
+            table{
+                thead{
+                    th{
+                        padding: 0.5rem 0.25rem;
+                        font-size: 0.75rem;
+                    }
+                }
+                tbody{
+                    td{
+                        padding: 0.5rem 0.25rem;
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+
+        >.price-discount{
+            >.night-price-discount {
+                >.discount {
+                    p {
+                        font-size: 0.9rem;
+                    }
+                }
+    
+                >.night-price {
+                    p {
+                        font-size: 1rem;
+                    }
+    
+                    span {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+    
+            >.price {
+                >.calc {
+                    >div {
+                        span {
+                            font-size: 0.9rem;
+                        }
+    
+                        span.stroke {
+                            svg {
+                                width: 8px;
+                                height: 8px;
+                            }
+                        }
+                    }
+    
+                    p {
+                        font-size: 0.9rem;
+                    }
+                }
+    
+                >.with {
+                    p {
+                        font-size: 0.9rem;
+                    }
+                }
+    
+                >.total-price {
+                    span {
+                        font-size: 0.9rem;
+                    }
+    
+                    p {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+    
+            >form{
+                label{
+                    font-size: 0.75rem;
+                }
+                div{
+                    input{
+                        font-size: 0.75rem;
+                        width: 100%;
+                    }
+                    button{
+                        font-size: 0.75rem;
+                        margin-right: -15%;
+                    }
+                }
+            }
+        }
+
+        >.submit{
+            a{
+                font-size: 0.75rem;
+            }
+        }
+    }
+
+    @include tablet{
+        padding: 1rem;
+        width: 45%;
+
+        >h2{
+            font-size: 0.9rem;
+        }
+        >img{
+            height: 12rem;
+        }
+
+        >.code{
+            >.right{
+                span{
+                    font-size: 0.8rem;
+                }
+                p{
+                    font-size: 0.8rem;
+                }
+            }
+            >.left{
+                font-size: 0.75rem;
+            }
+        }
+
+        >.date {
+            @include flex(row , space-between , center ,wrap);
+            >.enter{
+                margin-bottom: 1rem;
+            }
+            >.enter,
+            >.exit {
+                width: 100%;
+    
+                >div.form-group {
+                    label {
+                        font-size: 0.75rem;
+                    }
+    
+                    input {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+
+        >.bill{
+            h3{
+                font-size: 0.9rem;
+            }
+            table{
+                thead{
+                    th{
+                        padding: 0.5rem 0.25rem;
+                        font-size: 0.75rem;
+                    }
+                }
+                tbody{
+                    td{
+                        padding: 0.5rem 0.25rem;
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+
+        >.price-discount{
+            >.night-price-discount {
+                >.discount {
+                    p {
+                        font-size: 0.9rem;
+                    }
+                }
+    
+                >.night-price {
+                    p {
+                        font-size: 1rem;
+                    }
+    
+                    span {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+    
+            >.price {
+                >.calc {
+                    >div {
+                        span {
+                            font-size: 0.9rem;
+                        }
+    
+                        span.stroke {
+                            svg {
+                                width: 8px;
+                                height: 8px;
+                            }
+                        }
+                    }
+    
+                    p {
+                        font-size: 0.9rem;
+                    }
+                }
+    
+                >.with {
+                    p {
+                        font-size: 0.9rem;
+                    }
+                }
+    
+                >.total-price {
+                    span {
+                        font-size: 0.9rem;
+                    }
+    
+                    p {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+    
+            >form{
+                label{
+                    font-size: 0.75rem;
+                }
+                div{
+                    input{
+                        font-size: 0.75rem;
+                        width: 100%;
+                    }
+                    button{
+                        font-size: 0.75rem;
+                        margin-right: -15%;
+                    }
+                }
+            }
+        }
+
+        >.submit{
+            a{
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+.factor.active{
+    transition: .5s;
+    left: 0%;
+}

@@ -1,0 +1,38 @@
+* {
+  box-sizing: inherit !important;
+}
+.main > .set-place > .body .sidebar-form .form form .row.submit-cancel .cancel {
+  padding-top: 0.72rem;
+  padding-bottom: 0.7rem;
+}
+.form-group {
+  position: relative;
+}
+input[type="text"],
+input[type="search"],
+textarea {
+  background-color: #f5f5f5; border: 1px solid transparent !important;
+}
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  border-color: #7292fc !important;
+}
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label,
+textarea:focus ~ .floating-label,
+textarea:not(:focus):valid ~ .floating-label {
+  top: -20px;
+  right: 20px;
+  font-size: 12px;
+  opacity: 1;
+}
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  right: 20px;
+  top: 14px;
+  transition: 0.2s ease all;
+  color: #9ca3af;
+  font-size: 14px;
+}

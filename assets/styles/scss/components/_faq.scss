@@ -1,0 +1,187 @@
+.main{
+    >.faq{
+        >.title{
+            margin-top: -2rem;
+            margin-bottom: 3rem;
+            background-image: url('../../../src/images/footer.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        
+            @include flex(column , center , center);
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            h1{
+                font-size: 1.2rem;
+                color: black;
+                font-weight: 600;
+            }
+            hr{
+                border-width: 5px;
+                border-color: $blueColor;
+                width: 5%;
+            }
+        }
+        >.search{
+            @include flex(row , center);
+            margin-top: -5rem;
+            form{
+                width: 35%;
+                @include flex();
+                input{
+                    border-radius: 25px;
+                    padding: 1rem;
+                    width: calc(100% - 2rem);
+                    background-color: white;
+                    border: 1px solid rgba($color: black, $alpha: 0.1);
+                    @include boxshadow();
+                }
+                input:focus{
+                    border: 1px solid $blueColor;
+                    outline: none;
+                }
+                button{
+                    @include flex(row , center,center);
+                    margin-right: -3rem;
+                    background-color: $blueColor;
+                    padding: 0.75rem;
+                    border-radius: 50%;
+                    border: 0;
+                    align-self: center;
+                    cursor: pointer;
+                    i{
+                        color: white;
+                    }
+                }
+            }
+        }
+        
+        >.items{
+            @include flex(column , null , center);
+            margin-top: 3rem;
+            >.item{
+                border-radius: 20px;
+                border: 1px solid rgba(black , 0.1);
+                @include boxshadow($opacity: 0.05, $x: 0px, $y: 0px, $smooth: 15px);
+                width: 60%;
+                padding: 2rem;
+                a.question{
+                    font-size: 1rem;
+                    color: black;
+                }
+                p.answer{
+                    text-align: justify;
+                    font-size: 0.9rem;
+                    color: black;
+                    line-height: 2rem;
+                }
+                
+            }
+            .uk-open{
+                border: 1px solid white;
+                a.question{
+                    color: $blueColor;
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        >.faq{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 15%;
+                }
+            }
+            >.search{
+                margin-top: -4rem;
+                form{
+                    width: 90%;
+                    input{
+                        padding: 0.75rem;
+                        width: calc(100% - 1.5rem);
+                        font-size: 0.75rem;
+                    }
+                    button{
+                        @include flex(row , center,center);
+                        margin-right: -2.5rem;
+                        padding: 0.5rem;
+                    }
+                }
+            }
+
+            >.items{
+                margin-top: 2rem;
+                >.item{
+                    width: 80%;
+                    padding: 1rem;
+                    border-radius: 15px;
+                    a.question{
+                        font-size: 0.8rem;
+                    }
+                    p.answer{
+                        font-size: 0.75rem;
+                        line-height: 1.5rem;
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    @include tablet{
+        >.faq{
+            >.title{
+                margin-top: -1rem;
+            
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                h1{
+                    font-size: 1rem;
+                }
+                hr{
+                    width: 15%;
+                }
+            }
+            >.search{
+                // margin-top: -4rem;
+                form{
+                    width: 60%;
+                    input{
+                        padding: 0.75rem;
+                        width: calc(100% - 1.5rem);
+                        font-size: 0.75rem;
+                    }
+                    button{
+                        @include flex(row , center,center);
+                        margin-right: -2.5rem;
+                        padding: 0.5rem;
+                    }
+                }
+            }
+
+            >.items{
+                margin-top: 2rem;
+                >.item{
+                    width: 70%;
+                    padding: 1rem;
+                    a.question{
+                        font-size: 0.8rem;
+                    }
+                    p.answer{
+                        font-size: 0.75rem;
+                        line-height: 1.5rem;
+                    }
+                    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,237 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?bew42f');
+  src:  url('fonts/icomoon.eot?bew42f#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?bew42f') format('truetype'),
+    url('fonts/icomoon.woff?bew42f') format('woff'),
+    url('fonts/icomoon.svg?bew42f#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-discount:before {
+  content: "\e900";
+}
+.icon-bed-land:before {
+  content: "\e901";
+}
+.icon-eye:before {
+  content: "\e902";
+}
+.icon-toman:before {
+  content: "\e903";
+}
+.icon-location:before {
+  content: "\e904";
+}
+.icon-ab:before {
+  content: "\e905";
+}
+.icon-asansor:before {
+  content: "\e906";
+}
+.icon-ashpazi:before {
+  content: "\e907";
+}
+.icon-atm:before {
+  content: "\e908";
+}
+.icon-balkon:before {
+  content: "\e909";
+}
+.icon-barbiq:before {
+  content: "\e90a";
+}
+.icon-bargh:before {
+  content: "\e90b";
+}
+.icon-bed:before {
+  content: "\e90c";
+}
+.icon-bilyard:before {
+  content: "\e90d";
+}
+.icon-bokhari:before {
+  content: "\e90e";
+}
+.icon-chai-saz:before {
+  content: "\e90f";
+}
+.icon-changal:before {
+  content: "\e910";
+}
+.icon-coffee:before {
+  content: "\e911";
+}
+.icon-coffee-shop:before {
+  content: "\e912";
+}
+.icon-cooler-gazi:before {
+  content: "\e913";
+}
+.icon-dambel:before {
+  content: "\e914";
+}
+.icon-dosh:before {
+  content: "\e915";
+}
+.icon-dryer:before {
+  content: "\e916";
+}
+.icon-estakhr:before {
+  content: "\e917";
+}
+.icon-fazaye-sabz:before {
+  content: "\e918";
+}
+.icon-fer:before {
+  content: "\e919";
+}
+.icon-fire:before {
+  content: "\e91a";
+}
+.icon-football-dasti:before {
+  content: "\e91b";
+}
+.icon-garmayesh-az-kaf:before {
+  content: "\e91c";
+}
+.icon-gaz:before {
+  content: "\e91d";
+}
+.icon-girande-tv:before {
+  content: "\e91e";
+}
+.icon-hamam:before {
+  content: "\e91f";
+}
+.icon-help-box:before {
+  content: "\e920";
+}
+.icon-jakozi:before {
+  content: "\e921";
+}
+.icon-jalebasi:before {
+  content: "\e922";
+}
+.icon-jaro:before {
+  content: "\e923";
+}
+.icon-kabinet:before {
+  content: "\e924";
+}
+.icon-kapsol:before {
+  content: "\e925";
+}
+.icon-komod:before {
+  content: "\e926";
+}
+.icon-lebas-shoe:before {
+  content: "\e927";
+}
+.icon-lobi:before {
+  content: "\e928";
+}
+.icon-miz:before {
+  content: "\e929";
+}
+.icon-mobl:before {
+  content: "\e92a";
+}
+.icon-music:before {
+  content: "\e92b";
+}
+.icon-namaz:before {
+  content: "\e92c";
+}
+.icon-no-smoke:before {
+  content: "\e92d";
+}
+.icon-ojaq:before {
+  content: "\e92e";
+}
+.icon-otu:before {
+  content: "\e92f";
+}
+.icon-panke:before {
+  content: "\e930";
+}
+.icon-parking:before {
+  content: "\e931";
+}
+.icon-party:before {
+  content: "\e932";
+}
+.icon-pingpong:before {
+  content: "\e933";
+}
+.icon-room-service:before {
+  content: "\e934";
+}
+.icon-salon:before {
+  content: "\e935";
+}
+.icon-seshoar:before {
+  content: "\e936";
+}
+.icon-shofazh:before {
+  content: "\e937";
+}
+.icon-shoomine:before {
+  content: "\e938";
+}
+.icon-shop:before {
+  content: "\e939";
+}
+.icon-sigar:before {
+  content: "\e93a";
+}
+.icon-sonaa:before {
+  content: "\e93b";
+}
+.icon-tahviye:before {
+  content: "\e93c";
+}
+.icon-taxi:before {
+  content: "\e93d";
+}
+.icon-tv:before {
+  content: "\e93e";
+}
+.icon-vilcher:before {
+  content: "\e93f";
+}
+.icon-wc-irani:before {
+  content: "\e940";
+}
+.icon-wc:before {
+  content: "\e941";
+}
+.icon-wifi:before {
+  content: "\e942";
+}
+.icon-yakhchal:before {
+  content: "\e943";
+}
+.icon-location1:before {
+  content: "\e947";
+}
+.icon-star-full:before {
+  content: "\e9d9";
+}

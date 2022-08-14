@@ -1,0 +1,1922 @@
+.main {
+    >.detail-place {
+        >div {
+            @include flex(row, space-between, null);
+            @include bodyPadding();
+
+            >aside {
+                width: 33%;
+                max-width: 33%;
+
+                .reserve-request {
+                    background-color: white;
+                    padding: 1rem;
+                    border: 1px dashed $blueColor;
+                    border-radius: 15px;
+                    @include boxshadow();
+
+                    >.night-price {
+                        @include flex(row, null, center);
+                        margin-bottom: 2rem;
+
+                        p {
+                            @include flex(row, null, center);
+                            color: black;
+                            font-size: 1.5rem;
+                            padding-left: 0.5rem;
+                            border-left: 1px solid rgba(black, 0.3);
+                            margin-left: 0.5rem;
+                            font-weight: 600;
+
+                            span {
+                                margin-right: 0.25rem;
+                                font-weight: 400;
+                            }
+                        }
+
+                        span {
+                            font-size: 0.9rem;
+                            color: black;
+                        }
+                    }
+
+                    form {
+                        margin-bottom: 2rem;
+
+                        >.date {
+                            @include flex(row, space-between, null);
+                            margin-bottom: 1rem;
+
+                            >.enter,
+                            >.exit {
+                                @include flex(row, null, center);
+                                border: 1px solid rgba(black, 0.1);
+                                border-radius: 5px;
+                                padding: 0.5rem;
+                                width: 44%;
+                                max-width: 44%;
+
+                                i {
+                                    color: black;
+                                    opacity: 0.5;
+                                    margin-left: 0.5rem;
+                                    font-size: 1rem;
+                                }
+
+                                >div.form-group {
+                                    @include flex(column);
+
+                                    label {
+                                        color: black;
+                                        font-size: 0.9rem;
+                                        margin-bottom: 0.5rem;
+                                    }
+
+                                    input {
+                                        border: 0;
+                                        font-size: 0.8rem;
+                                        width: 100%;
+                                    }
+
+                                    input:focus {
+                                        outline: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        >.count {
+                            border: 1px solid rgba(black, 0.1);
+                            border-radius: 5px;
+                            padding: 0.5rem 1rem;
+                            @include flex(row, center, center);
+                            margin-bottom: 1rem;
+
+                            >div {
+                                @include flex(column, null, center);
+                                margin-left: 1rem;
+                                margin-right: 1rem;
+                                width: 30%;
+
+                                span.number {
+                                    font-size: 1.1rem;
+                                    font-weight: 600;
+                                    color: black;
+                                }
+
+                                span:last-child {
+                                    opacity: 0.6;
+                                    color: black;
+                                    font-size: 0.8rem;
+                                    margin-top: 0.5rem;
+                                }
+                            }
+
+                            a {
+                                text-decoration: none;
+                                background-color: #F5F5F5;
+                                border-radius: 5px;
+                                padding: 0.5rem;
+
+                                i {
+                                    color: black;
+                                }
+                            }
+                        }
+
+                        >.submit {
+                            @include flex();
+                            >a{
+                                text-align: center;
+                                text-decoration: none;
+                                width: 100%;
+                                background-color: $blueColor;
+                                border: 1px solid $blueColor;
+                                color: white;
+                                font-size: 0.9rem;
+                                padding-top: 1rem;
+                                padding-bottom: 1rem;
+                                border-radius: 5px;
+                                transition: all 0.3s;
+                            }   
+                            a:hover{
+                                background-color: white;
+                                color: $blueColor;
+                            }                     
+                            button {
+                                width: 100%;
+                                font-family: shabnam;
+                                cursor: pointer;
+                                background-color: $blueColor;
+                                border: 1px solid $blueColor;
+                                border: 0;
+                                border-radius: 5px;
+                                color: white;
+                                font-size: 0.9rem;
+                                padding-top: 0.75rem;
+                                padding-bottom: 0.75rem;
+                                transition: all 0.3s;
+                            }
+                            button:hover{
+                                background-color: white;
+                                color: $blueColor;
+                            }
+                        }
+                    }
+
+                    >.calc {
+                        margin-bottom: 1rem;
+                        @include flex(row, space-between, center);
+
+                        >div {
+                            span {
+                                font-size: 1rem;
+                                color: black;
+                                opacity: 0.7;
+                            }
+
+                            span.stroke {
+                                margin-left: 0.25rem;
+                                margin-right: 0.25rem;
+
+                                svg {
+                                    width: 10px;
+                                    height: 10px;
+                                }
+                            }
+                        }
+
+                        p {
+                            font-size: 1rem;
+                            color: black;
+                            opacity: 0.7;
+                        }
+                    }
+
+                    >.with {
+                        margin-bottom: 1rem;
+                        @include flex(row, space-between, center);
+
+                        p {
+                            font-size: 1rem;
+                            color: black;
+                            opacity: 0.7;
+                        }
+                    }
+
+                    >.total-price {
+                        @include flex(row, space-between, center);
+                        border-top: 1px solid black;
+                        padding-top: 1.5rem;
+                        padding-bottom: 0.5rem;
+
+                        span {
+                            font-size: 1rem;
+                            color: black;
+                            font-weight: 600;
+                        }
+
+                        p {
+                            font-size: 1rem;
+                            color: black;
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                .point {
+                    margin-top: 2rem;
+                    padding: 1rem;
+                    background-color: #F5F5F5;
+                    border-radius: 15px;
+
+                    h3 {
+                        font-size: 1rem;
+                        margin-bottom: 1rem;
+                        font-weight: 600;
+                    }
+
+                    ul {
+                        padding-right: 1rem;
+                        margin-bottom: 0;
+                        list-style-type: decimal;
+
+                        li {
+                            font-size: 0.8rem;
+                            margin-bottom: 1rem;
+                            line-height: 2rem;
+                            text-align: justify;
+                        }
+                    }
+                }
+            }
+
+            >.reserve-request-responsive {
+                display: none;
+                position: fixed;
+                bottom: 0;
+                width: calc(100% - 2rem);
+                @include boxshadow($opacity: 0.3, $x: 0px, $y: 0px, $smooth: 15px);
+                background-color: white;
+                margin-right: -1rem;
+                margin-left: -1rem;
+                padding: 1rem 1rem;
+
+                a {
+                    @include flex(row, center);
+                    text-decoration: none;
+                    background-color: $blueColor;
+                    color: white;
+                    font-size: 0.9rem;
+                    border-radius: 25px;
+                    width: 60%;
+                    padding: 0.75rem;
+                }
+            }
+
+            >div.body{
+                width: 65%;
+                max-width: 65%;
+
+                // Title,rate,share of place
+                >.title-rate-share {
+                    @include flex(row, space-between, flex-start);
+
+                    >.title {
+                        @include flex(column);
+
+                        h1 {
+                            font-size: 1.2rem;
+                            margin-bottom: 1rem;
+                            color: black;
+                        }
+
+                        >.address-code {
+                            @include flex(row, null, null);
+
+                            >.address {
+                                @include flex(row, null, center);
+                                margin-left: 1rem;
+
+                                i {
+                                    color: $blueColor;
+                                }
+
+                                p {
+                                    margin-right: 0.5rem;
+                                    font-size: 0.8rem;
+                                    color: black;
+                                }
+                            }
+
+                            >.code {
+                                @include flex(row, null, center);
+
+                                span {
+                                    font-size: 0.8rem;
+                                    color: black;
+                                    margin-left: 0.5rem;
+                                }
+
+                                p {
+                                    font-size: 0.8rem;
+                                    color: $blueColor;
+                                }
+                            }
+                        }
+                    }
+
+                    >.rate-share {
+                        @include flex(row, null, center);
+
+                        >.rate {
+                            @include flex(row, center, center);
+                            margin-left: 1rem;
+
+                            span {
+                                @include flex(row, center, center);
+                                background-color: $blueColor;
+                                border-radius: 5px;
+                                padding: 0.10rem;
+                                margin-left: 0.25rem;
+
+                                i {
+                                    font-size: 0.8rem;
+                                    color: white;
+                                    font-size: 0.75rem;
+                                }
+                            }
+
+                            p {
+                                font-size: 0.8rem;
+                                color: black;
+                            }
+                        }
+
+                        >.comment {
+                            @include flex(row, null, center);
+                            margin-left: 0.5rem;
+
+                            i {
+                                color: black;
+                                opacity: 0.7;
+                                margin-left: 0.25rem;
+                            }
+
+                            p {
+                                color: black;
+                                font-size: 0.8rem;
+                            }
+                        }
+
+                        a {
+                            @include flex(row, center, center);
+                            text-decoration: none;
+                            margin-right: 0.5rem;
+                            background-color: #F5F5F5;
+                            border-radius: 5px;
+                            padding: 0.5rem;
+
+                            i {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+
+                // Photos
+                >.photos {
+                    margin-top: 2rem;
+
+                    .uk-position-relative {
+                        .uk-slideshow-items {
+
+                            // min-height: 350px !important;
+                            li {
+                                border-radius: 15px;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 15px;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+
+                        .uk-slidenav {
+                            background-color: white;
+                            padding: 1rem;
+                            border-radius: 50%;
+                            color: black;
+                            opacity: 0.5;
+
+                            svg {
+                                width: 10px;
+                                height: 10px;
+                            }
+                        }
+                    }
+
+                    >.lightbox {
+                        margin-top: 1rem;
+                        @include flex(row, space-between, center);
+
+                        >div {
+                            width: 22%;
+
+                            a {
+                                img {
+                                    border-radius: 15px;
+                                    width: 100%;
+                                    height: 8rem;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+
+                        .see-more {
+                            @include flex(column, center, center);
+                            border: 1px solid rgba($color: #000000, $alpha: 0.1);
+                            height: 8rem;
+                            border-radius: 15px;
+
+                            a {
+                                text-decoration: none;
+                                margin-bottom: 0.5rem;
+                                color: black;
+                                font-size: 0.9rem;
+                            }
+
+                            a.dot {
+                                @include flex(row, center, center);
+                                background-color: rgba($color: #1749FF, $alpha: 0.1);
+                                border-radius: 50%;
+                                width: 2rem;
+                                height: 2rem;
+
+                                i {
+                                    color: $blueColor;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // About
+                >.about {
+                    margin-top: 2rem;
+
+                    >div {
+                        @include flex(row, null, center);
+                        margin-bottom: 1rem;
+
+                        i {
+                            color: $blueColor;
+                            font-size: 1.5rem;
+                        }
+
+                        h3 {
+                            margin-right: 0.25rem;
+                            font-size: 1.1rem;
+                            color: black;
+                            font-weight: 500;
+                        }
+                    }
+
+                    >p {
+                        font-size: 0.9rem;
+                        text-align: justify;
+                        color: black;
+                        line-height: 2rem;
+                    }
+
+                    >.room-items {
+                        margin-top: 2rem;
+                        @include flex(row, null, null, wrap);
+                        margin-left: -0.5rem;
+                        margin-right: -0.5rem;
+
+                        >div {
+                            border: 1px solid rgba($color: black, $alpha: 0.1);
+                            border-radius: 15px;
+                            @include flex(column, center, center);
+                            margin-bottom: 1rem;
+                            margin-right: 0.5rem;
+                            margin-left: 0.5rem;
+                            width: calc(19.7% - 1rem);
+                            padding-top: 1rem;
+                            padding-bottom: 1rem;
+
+                            img {
+                                width: 3rem;
+                                height: 3rem;
+                            }
+
+                            p {
+                                margin-top: 1rem;
+                                font-size: 0.9rem;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+
+                // host info
+                >.host-info {
+                    margin-top: 1rem;
+                    @include flex(row, space-between, center);
+                    border-bottom: 1px solid $blueColor;
+                    padding-bottom: 1.5rem;
+
+                    >.name-img {
+                        @include flex(row, null, center);
+
+                        >.img {
+                            margin-left: 1rem;
+
+                            img {
+                                width: 4rem;
+                                height: 4rem;
+                                border-radius: 50%;
+                                border: 1px solid rgba(black, 0.1);
+                            }
+                        }
+
+                        >.name {
+                            @include flex(column);
+
+                            p {
+                                font-size: 1rem;
+                                color: black;
+                                margin-bottom: 0.5rem;
+                                font-weight: 500;
+                            }
+
+                            span {
+                                @include flex(row, null, center);
+                                color: $blueColor;
+                                font-size: 0.8rem;
+
+                                i {
+                                    font-size: 1rem;
+                                    margin-left: 0.25rem;
+                                }
+                            }
+                        }
+                    }
+
+                    a {
+                        @include flex(row, null, center);
+                        text-decoration: none;
+                        background-color: #F5F5F5;
+                        border-radius: 5px;
+                        color: $blueColor;
+                        font-size: 0.9rem;
+                        padding: 0.75rem 1rem;
+                    }
+                }
+
+                // Place Options
+                >.options {
+                    margin-top: 2rem;
+                    padding-bottom: 1rem;
+                    border-bottom: 1px solid rgba(black, 0.1);
+
+                    h3 {
+                        font-size: 1.1rem;
+                        color: black;
+                        font-weight: 500;
+                        margin-bottom: 1rem
+                    }
+
+                    >.items {
+                        @include flex(row, null, null, wrap);
+
+                        >.item {
+                            @include flex(row, null, center);
+                            width: 25%;
+                            margin-bottom: 1rem;
+
+                            img {
+                                width: 2rem;
+                                height: 2rem;
+                            }
+
+                            span {
+                                margin-right: 0.5rem;
+                                font-size: 0.9rem;
+                                color: black;
+                            }
+                        }
+
+                        >.item.disabled {
+                            text-decoration: line-through;
+                        }
+                    }
+
+                    >.see-more {
+                        @include flex(row, null, center);
+                        text-decoration: none;
+                        background-color: #F5F5F5;
+                        border-radius: 5px;
+                        color: black;
+                        font-size: 0.9rem;
+                        padding: 0.75rem 1rem;
+                        width: fit-content;
+
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+
+                >.rules {
+                    margin-top: 2rem;
+                    padding-bottom: 1rem;
+                    border-bottom: 1px solid rgba(black, 0.1);
+
+                    h3 {
+                        font-size: 1.1rem;
+                        color: black;
+                        font-weight: 500;
+                        margin-bottom: 1rem
+                    }
+
+                    >.items {
+                        height: 12.5rem;
+                        @include flex(column, null, null, wrap);
+
+                        >.item {
+                            @include flex(row, null, center);
+                            width: 50%;
+
+                            >.img {
+                                @include flex(row, center, center);
+                                margin-left: 1rem;
+                                width: 3rem;
+                                height: 3rem;
+                                border: 1px solid rgba(black, 0.1);
+                                border-radius: 5px;
+                            }
+
+                            >.text {
+                                @include flex(column);
+
+                                span {
+                                    margin-bottom: 0.5rem;
+                                    color: black;
+                                    opacity: 0.6;
+                                    font-size: 0.9rem;
+                                }
+
+                                p {
+                                    color: black;
+                                    font-size: 1rem;
+                                    // font-weight: 500;
+                                }
+                            }
+                        }
+
+                        >.dash {
+                            padding-top: 1rem;
+                            padding-bottom: 1rem;
+                            height: 3rem;
+                            width: 0.25rem;
+                            width: 18%;
+                            text-align: center;
+                            @include flex(row, center, center);
+
+                            div {
+                                width: 2px;
+                                height: 100%;
+                                background-color: rgba($color: #000000, $alpha: 0.1);
+                            }
+                        }
+                    }
+
+                    >.points {
+                        margin-top: 2rem;
+
+                        p {
+                            @include flex(row, null, center);
+
+                            i {
+                                color: #FF0000;
+                                font-size: 1.1rem;
+                                margin-left: 0.5rem;
+                            }
+
+                            font-size: 0.9rem;
+                            color: black;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+                
+                >.comments{
+                    margin-top: 2rem;
+
+                    >.title{
+                        @include flex(row , null , center);
+                        margin-bottom: 1rem;
+                        i{
+                            font-size: 1.4rem;
+                            color: black;
+                            margin-left: 0.5rem;
+                        }
+                        h3 {
+                            font-size: 1.1rem;
+                            color: black;
+                            font-weight: 500;
+                        }
+                    }
+
+                    >.feedback{
+                        padding: 1.5rem;
+                        border-radius: 15px;
+                        border: 2px solid $blueColor;
+                        >.until-now{
+                            @include flex(row , null , center);
+                            span {
+                                @include flex(row, center, center);
+                                background-color: $blueColor;
+                                border-radius: 5px;
+                                padding: 0.10rem;
+                                margin-left: 0.25rem;
+
+                                i {
+                                    font-size: 0.8rem;
+                                    color: white;
+                                    font-size: 0.75rem;
+                                }
+                            }
+                            p{
+                                color: black;
+                                font-size: 0.9rem;
+                                opacity: 0.7;
+                            }
+                        }
+                        >.rate-parts{
+                            @include flex(row , space-between , center);
+                            >.parts{
+                                width: 70%;
+                                max-width: 70%;
+                                ul{
+                                    padding-right: 0;
+                                    margin-bottom: 0;
+                                    @include flex(row , space-between,null ,wrap);
+                                    li{
+                                        @include flex(row , null,center);
+                                        margin-top: 1.5rem;
+                                        width: 50%;
+                                        i{
+                                            font-size: 0.5rem;
+                                            color: $blueColor;
+                                        }
+                                        >p.name{
+                                            margin-left: 0.5rem;
+                                            margin-right: 0.5rem;
+                                            color: black;
+                                            font-size: 0.9rem;
+                                        }
+                                        >p.rate{
+                                            color: black;
+                                            font-size: 1rem;
+                                            span{
+                                                font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            >.total-rate{
+                                width: 25%;
+                                max-width: 25%;
+                                @include flex(column , flex-end , center);
+                                p{
+                                    font-size: 4rem;
+                                    color: $blueColor;
+                                    margin-bottom: 1rem;
+                                }
+                                a{
+                                    background-color: $blueColor;
+                                    border-radius: 5px;
+                                    @include flex(row , center , center);
+                                    color: white;
+                                    font-size: 0.8rem;
+                                    padding: 0.5rem 1.5rem;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                    
+                    >.totla-comments{
+                        >.each-comment{
+                            margin-top: 1rem;
+                            background-color: $backgroundColor;
+                            border-radius: 15px;
+                            padding: 1.5rem;
+                            >.user-date{   
+                                @include flex(row , space-between , center);
+                                >.user{
+                                    @include flex(row , null , center);
+                                    >.img{
+                                        margin-left: 0.5rem;
+                                        img{
+                                            border-radius: 50%;
+                                            width: 4rem;
+                                            height: 4rem;
+                                        }
+                                    }
+                                    >.name{
+                                        @include flex(column);
+                                        p{
+                                            font-size: 1rem;
+                                            color: black;
+                                        }
+                                        >div{
+                                            margin-top: 0.5rem;
+                                            @include flex(row , null , center);
+                                            span:first-child{
+                                                @include flex(row, center, center);
+                                                background-color: $blueColor;
+                                                border-radius: 5px;
+                                                padding: 0.10rem;
+                                                margin-left: 0.25rem;
+                
+                                                i {
+                                                    font-size: 0.8rem;
+                                                    color: white;
+                                                    font-size: 0.75rem;
+                                                }
+                                            }
+                                            span:last-child{
+                                                font-size: 0.9rem;
+                                                font-weight: 500;
+                                                color: $blueColor;
+                                            }
+                                        }
+                                    }
+                                }
+                                >p.date{
+                                    font-size: 0.9rem;
+                                    color: black;
+                                }
+                            }
+                            >.text{
+                                margin-top: 1rem;
+                                p{
+                                    text-align: justify;
+                                    line-height: 2rem;
+                                    font-size: 0.9rem;
+                                    color: black;
+                                }
+                            }
+                        }
+
+                        >.see-more{
+                            margin-top: 1.5rem;
+                            a{
+                                @include flex(row , null , center);
+                                text-decoration: none;
+                                border: 1px dashed black;
+                                border-radius: 10px;
+                                color: black;
+                                background-color: white;
+                                font-size: 0.9rem;
+                                padding: 0.5rem 1rem;
+                                width: fit-content;
+                                i{
+                                    font-size: 1.5rem;
+                                    margin-left: 0.5rem;
+                                }
+                            }
+                        }
+                    } 
+                }
+
+                >.point-responsive {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        >.detail-place {
+            >div {
+                >aside {
+                    display: none;
+                }
+
+                >.reserve-request-responsive {
+                    @include flex(row, center);
+                    z-index: 999;
+                }
+
+                >div.body {
+                    width: 100%;
+                    max-width: 100%;
+
+                    // Title,rate,share of place
+                    >.title-rate-share {
+                        @include flex(column, center, center);
+
+                        >.title {
+                            @include flex(column, center, center);
+                            margin-bottom: 1rem;
+
+                            h1 {
+                                font-size: 1rem;
+                            }
+
+                            >.address-code {
+                                >.address {
+                                    p {
+                                        margin-right: 0.25rem;
+                                        font-size: 0.75rem;
+                                    }
+                                }
+
+                                >.code {
+                                    span {
+                                        font-size: 0.75rem;
+                                        margin-left: 0.25rem;
+                                    }
+
+                                    p {
+                                        font-size: 0.75rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        >.rate-share {
+                            @include flex(row, null, center);
+
+                            >.rate {
+                                p {
+                                    font-size: 0.75rem;
+                                }
+                            }
+
+                            >.comment {
+                                p {
+                                    font-size: 0.75rem;
+                                }
+                            }
+
+                            a {
+                                padding: 0.25rem;
+                            }
+                        }
+                    }
+
+                    >.photos {
+                        .uk-position-relative {
+                            .uk-slidenav {
+                                padding: 0.75rem;
+
+                                svg {
+                                    width: 8px;
+                                    height: 8px;
+                                }
+                            }
+                        }
+
+                        >.lightbox {
+                            display: none;
+                        }
+                    }
+
+                    // About
+                    >.about {
+                        >div {
+                            i {
+                                font-size: 1.2rem;
+                            }
+
+                            h3 {
+                                font-size: 0.9rem;
+                            }
+                        }
+
+                        >p {
+                            font-size: 0.75rem;
+                        }
+
+                        >.room-items {
+                            margin-top: 1rem;
+
+                            >div {
+                                width: calc(49.4% - 1rem);
+
+                                img {
+                                    width: 2rem;
+                                    height: 2rem;
+                                }
+
+                                p {
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+                    }
+
+                    // host info
+                    >.host-info {
+                        @include flex(row, space-between, center);
+
+                        >.name-img {
+                            >.img {
+                                margin-left: 0.5rem;
+
+                                img {
+                                    width: 3rem;
+                                    height: 3rem;
+                                }
+                            }
+
+                            >.name {
+                                p {
+                                    font-size: 0.8rem;
+                                }
+
+                                span {
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+
+                        a {
+                            font-size: 0.75rem;
+                            padding: 0.5rem 0.75rem;
+                        }
+                    }
+
+                    // Place Options
+                    >.options {
+                        margin-top: 1.5rem;
+
+                        h3 {
+                            font-size: 0.9rem;
+                        }
+
+                        >.items {
+                            >.item {
+                                width: 33.33%;
+
+                                span {
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+
+                        >.see-more {
+                            font-size: 0.75rem;
+                            padding: 0.5rem 0.75rem;
+                        }
+                    }
+
+                    >.rules {
+                        margin-top: 1.5rem;
+
+                        h3 {
+                            font-size: 0.9rem;
+                        }
+
+                        >.items {
+                            >.item {
+                                >.text {
+                                    span {
+                                        font-size: 0.75rem;
+                                    }
+
+                                    p {
+                                        font-size: 0.9rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        >.points {
+                            margin-top: 1rem;
+
+                            p {
+                                i {
+                                    font-size: 1rem;
+                                }
+
+                                font-size: 0.75rem;
+                                line-height: 1.5rem;
+                            }
+                        }
+                    }
+
+                    >.comments{
+                        margin-top: 1.5rem;
+    
+                        >.title{
+                            i{
+                                font-size: 1.2rem;
+                            }
+                            h3 {
+                                font-size: 0.9rem;
+                            }
+                        }
+    
+                        >.feedback{
+                            padding: 1rem;
+                            >.until-now{
+                                p{
+                                    font-size: 0.75rem;
+                                }
+                            }
+                            >.rate-parts{
+                                @include flex(row , space-between , center , wrap);
+                                >.parts{
+                                    width: 100%;
+                                    max-width: 100%;
+                                    margin-bottom: 1rem;
+                                    ul{
+                                        li{
+                                            margin-top: 1rem;
+                                            >p.name{
+                                                font-size: 0.75rem;
+                                            }
+                                            >p.rate{
+                                                font-size: 0.9rem;
+                                            }
+                                        }
+                                    }
+                                }
+                                >.total-rate{
+                                    width: 100%;
+                                    max-width: 100%;
+                                    @include flex(column , center , center);
+                                    p{
+                                        font-size: 3rem;
+                                        margin-bottom: 0.5rem;
+                                    }
+                                    a{
+                                        font-size: 0.75rem;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        >.totla-comments{
+                            >.each-comment{
+                                padding: 1rem;
+                                >.user-date{
+                                    >.user{
+                                        >.img{
+                                            img{
+                                                width: 3rem;
+                                                height: 3rem;
+                                            }
+                                        }
+                                        >.name{
+                                            p{
+                                                font-size: 0.9rem;
+                                            }
+                                        }
+                                    }
+                                    >p.date{
+                                        font-size: 0.75rem;
+                                    }
+                                }
+                                >.text{
+                                    p{
+                                        line-height: 1.5rem;
+                                        font-size: 0.75rem;
+                                    }
+                                }
+                            }
+    
+                            >.see-more{
+                                margin-top: 1rem;
+                                a{
+                                    font-size: 0.75rem;
+                                    padding: 0.5rem 0.5rem;
+                                    i{
+                                        font-size: 1.2rem;
+                                    }
+                                }
+                            }
+                        } 
+                    }
+
+                    >.point-responsive {
+                        display: block;
+                        margin-top: 2rem;
+                        padding: 1rem;
+                        background-color: #F5F5F5;
+                        border-radius: 15px;
+
+                        h3 {
+                            font-size: 0.9rem;
+                            margin-bottom: 1rem;
+                            font-weight: 600;
+                        }
+
+                        ul {
+                            padding-right: 1rem;
+                            margin-bottom: 0;
+                            list-style-type: decimal;
+
+                            li {
+                                font-size: 0.75rem;
+                                margin-bottom: 1rem;
+                                line-height: 1.5rem;
+                                text-align: justify;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet{
+        >.detail-place {
+            >div {
+                >aside {
+                    display: none;
+                }
+
+                >.reserve-request-responsive {
+                    @include flex(row, center);
+                    z-index: 999;
+                }
+
+                >div.body {
+                    width: 100%;
+                    max-width: 100%;
+
+                    // Title,rate,share of place
+                    >.title-rate-share {
+                        @include flex(column, center, center);
+
+                        >.title {
+                            @include flex(column, center, center);
+                            margin-bottom: 1rem;
+
+                            h1 {
+                                font-size: 1rem;
+                            }
+
+                            >.address-code {
+                                >.address {
+                                    p {
+                                        margin-right: 0.25rem;
+                                        font-size: 0.75rem;
+                                    }
+                                }
+
+                                >.code {
+                                    span {
+                                        font-size: 0.75rem;
+                                        margin-left: 0.25rem;
+                                    }
+
+                                    p {
+                                        font-size: 0.75rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        >.rate-share {
+                            @include flex(row, null, center);
+
+                            >.rate {
+                                p {
+                                    font-size: 0.75rem;
+                                }
+                            }
+
+                            >.comment {
+                                p {
+                                    font-size: 0.75rem;
+                                }
+                            }
+
+                            a {
+                                padding: 0.25rem;
+                            }
+                        }
+                    }
+
+                    >.photos {
+                        .uk-position-relative {
+                            .uk-slidenav {
+                                padding: 0.75rem;
+
+                                svg {
+                                    width: 8px;
+                                    height: 8px;
+                                }
+                            }
+                        }
+
+                        >.lightbox {
+                            display: none;
+                        }
+                    }
+
+                    // About
+                    >.about {
+                        >div {
+                            i {
+                                font-size: 1.2rem;
+                            }
+
+                            h3 {
+                                font-size: 0.9rem;
+                            }
+                        }
+
+                        >p {
+                            font-size: 0.75rem;
+                        }
+
+                        >.room-items {
+                            margin-top: 1rem;
+
+                            >div {
+                                width: calc(49.4% - 1rem);
+
+                                img {
+                                    width: 2rem;
+                                    height: 2rem;
+                                }
+
+                                p {
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+                    }
+
+                    // host info
+                    >.host-info {
+                        @include flex(row, space-between, center);
+
+                        >.name-img {
+                            >.img {
+                                margin-left: 0.5rem;
+
+                                img {
+                                    width: 3rem;
+                                    height: 3rem;
+                                }
+                            }
+
+                            >.name {
+                                p {
+                                    font-size: 0.8rem;
+                                }
+
+                                span {
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+
+                        a {
+                            font-size: 0.75rem;
+                            padding: 0.5rem 0.75rem;
+                        }
+                    }
+
+                    // Place Options
+                    >.options {
+                        margin-top: 1.5rem;
+
+                        h3 {
+                            font-size: 0.9rem;
+                        }
+
+                        >.items {
+                            >.item {
+                                width: 33.33%;
+
+                                span {
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+
+                        >.see-more {
+                            font-size: 0.75rem;
+                            padding: 0.5rem 0.75rem;
+                        }
+                    }
+
+                    >.rules {
+                        margin-top: 1.5rem;
+
+                        h3 {
+                            font-size: 0.9rem;
+                        }
+
+                        >.items {
+                            >.item {
+                                >.text {
+                                    span {
+                                        font-size: 0.75rem;
+                                    }
+
+                                    p {
+                                        font-size: 0.9rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        >.points {
+                            margin-top: 1rem;
+
+                            p {
+                                i {
+                                    font-size: 1rem;
+                                }
+
+                                font-size: 0.75rem;
+                                line-height: 1.5rem;
+                            }
+                        }
+                    }
+                    
+                    >.comments{
+                        margin-top: 1.5rem;
+    
+                        >.title{
+                            i{
+                                font-size: 1.2rem;
+                            }
+                            h3 {
+                                font-size: 0.9rem;
+                            }
+                        }
+    
+                        >.feedback{
+                            padding: 1rem;
+                            >.until-now{
+                                p{
+                                    font-size: 0.75rem;
+                                }
+                            }
+                            >.rate-parts{
+                                >.parts{
+                                    margin-bottom: 1rem;
+                                    ul{
+                                        li{
+                                            margin-top: 1rem;
+                                            >p.name{
+                                                font-size: 0.75rem;
+                                            }
+                                            >p.rate{
+                                                font-size: 0.9rem;
+                                            }
+                                        }
+                                    }
+                                }
+                                >.total-rate{
+                                    p{
+                                        font-size: 3rem;
+                                        margin-bottom: 0.5rem;
+                                    }
+                                    a{
+                                        font-size: 0.75rem;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        >.totla-comments{
+                            >.each-comment{
+                                padding: 1rem;
+                                >.user-date{
+                                    >.user{
+                                        >.img{
+                                            img{
+                                                width: 3rem;
+                                                height: 3rem;
+                                            }
+                                        }
+                                        >.name{
+                                            p{
+                                                font-size: 0.9rem;
+                                            }
+                                        }
+                                    }
+                                    >p.date{
+                                        font-size: 0.75rem;
+                                    }
+                                }
+                                >.text{
+                                    p{
+                                        line-height: 1.5rem;
+                                        font-size: 0.75rem;
+                                    }
+                                }
+                            }
+    
+                            >.see-more{
+                                margin-top: 1rem;
+                                a{
+                                    font-size: 0.75rem;
+                                    padding: 0.5rem 0.5rem;
+                                    i{
+                                        font-size: 1.2rem;
+                                    }
+                                }
+                            }
+                        } 
+                    }
+
+                    >.point-responsive {
+                        display: block;
+                        margin-top: 2rem;
+                        padding: 1rem;
+                        background-color: #F5F5F5;
+                        border-radius: 15px;
+
+                        h3 {
+                            font-size: 0.9rem;
+                            margin-bottom: 1rem;
+                            font-weight: 600;
+                        }
+
+                        ul {
+                            padding-right: 1rem;
+                            margin-bottom: 0;
+                            list-style-type: decimal;
+
+                            li {
+                                font-size: 0.75rem;
+                                margin-bottom: 1rem;
+                                line-height: 1.5rem;
+                                text-align: justify;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#reserve-request-responsive-modal {
+    .uk-modal-body {
+        background-color: white;
+        padding: 1rem;
+        border: 1px dashed $blueColor;
+        border-radius: 15px;
+        @include boxshadow();
+
+        >.night-price {
+            @include flex(row, null, center);
+            margin-bottom: 2rem;
+
+            p {
+                @include flex(row, null, center);
+                color: black;
+                font-size: 1.5rem;
+                padding-left: 0.5rem;
+                border-left: 1px solid rgba(black, 0.3);
+                margin-left: 0.5rem;
+                font-weight: 600;
+
+                span {
+                    margin-right: 0.25rem;
+                    font-weight: 400;
+                }
+            }
+
+            span {
+                font-size: 0.9rem;
+                color: black;
+            }
+        }
+
+        form {
+            margin-bottom: 2rem;
+
+            >.date {
+                @include flex(row, space-between, null);
+                margin-bottom: 1rem;
+
+                >.enter,
+                >.exit {
+                    @include flex(row, null, center);
+                    border: 1px solid rgba(black, 0.1);
+                    border-radius: 5px;
+                    padding: 0.5rem;
+                    width: 44%;
+                    max-width: 44%;
+
+                    i {
+                        color: black;
+                        opacity: 0.5;
+                        margin-left: 0.5rem;
+                        font-size: 1rem;
+                    }
+
+                    >div.form-group {
+                        @include flex(column);
+
+                        label {
+                            color: black;
+                            font-size: 0.9rem;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        input {
+                            border: 0;
+                            font-size: 0.8rem;
+                            width: 100%;
+                        }
+
+                        input:focus {
+                            outline: 0;
+                        }
+                    }
+                }
+            }
+
+            >.count {
+                border: 1px solid rgba(black, 0.1);
+                border-radius: 5px;
+                padding: 0.5rem 1rem;
+                @include flex(row, center, center);
+                margin-bottom: 1rem;
+
+                >div {
+                    @include flex(column, null, center);
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                    width: 30%;
+
+                    span.number {
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        color: black;
+                    }
+
+                    span:last-child {
+                        opacity: 0.6;
+                        color: black;
+                        font-size: 0.8rem;
+                        margin-top: 0.5rem;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    background-color: #F5F5F5;
+                    border-radius: 5px;
+                    padding: 0.5rem;
+
+                    i {
+                        color: black;
+                    }
+                }
+            }
+
+            >.submit {
+                @include flex();
+                a{
+                    text-decoration: none;
+                    width: 100%;
+                    text-align: center;
+                    background-color: $blueColor;
+                    border-radius: 5px;
+                    color: white;
+                    font-size: 0.9rem;
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                }
+                button {
+                    width: 100%;
+                    font-family: shabnam;
+                    cursor: pointer;
+                    background-color: $blueColor;
+                    border: 0;
+                    border-radius: 5px;
+                    color: white;
+                    font-size: 0.9rem;
+                    padding-top: 0.75rem;
+                    padding-bottom: 0.75rem;
+                }
+            }
+        }
+
+        >.calc {
+            margin-bottom: 1rem;
+            @include flex(row, space-between, center);
+
+            >div {
+                span {
+                    font-size: 1rem;
+                    color: black;
+                    opacity: 0.7;
+                }
+
+                span.stroke {
+                    margin-left: 0.25rem;
+                    margin-right: 0.25rem;
+
+                    svg {
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+            }
+
+            p {
+                font-size: 1rem;
+                color: black;
+                opacity: 0.7;
+            }
+        }
+
+        >.with {
+            margin-bottom: 1rem;
+            @include flex(row, space-between, center);
+
+            p {
+                font-size: 1rem;
+                color: black;
+                opacity: 0.7;
+            }
+        }
+
+        >.total-price {
+            @include flex(row, space-between, center);
+            border-top: 1px solid black;
+            padding-top: 1.5rem;
+            padding-bottom: 0.5rem;
+
+            span {
+                font-size: 1rem;
+                color: black;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 1rem;
+                color: black;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+#confirm-information-modal{
+    .uk-modal-body{
+        background-color: white;
+        border-radius: 15px;
+        >.foreign{
+            display: none;
+            .form-group{
+                text-align: left;
+                input{
+                    text-align: left;
+                    direction: ltr;
+                }
+            }
+        }
+        .title{
+            @include flex(row , space-between , center);
+            margin-bottom: 2rem;
+            >div{
+                @include flex(row , null , center);
+                i{
+                    font-size: 1.5rem;
+                    color: black;
+                    margin-left: 0.5rem;
+                }
+                h3{
+                    font-size: 1.1rem;
+                    color: black;
+                    font-weight: 500;
+                }
+            }
+            button{
+                position: inherit;
+                background-color: $backgroundColor;
+                border-radius: 5px;
+                @include flex(row , center , center);
+                padding: 0.5rem;
+                svg{
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+        .checkbox{
+            @include flex(row , space-between , center);
+            margin-bottom: 2rem;
+            label{
+                font-size: 1rem;
+                color: black;
+            }
+        }
+        .form{
+            @include flex(column);
+            >form{
+                >.form-group{
+                    @include flex(column);
+                    margin-bottom: 1.5rem;
+                    label{
+                        font-size: 0.9rem;
+                        color: black;
+                        font-weight: 500;
+                        margin-bottom: 0.5rem;
+                    }
+                    input{
+                        border-radius: 5px;
+                        border: 1px solid rgba(black , 0.2);
+                        padding: 0.75rem;
+                        font-size: 0.9rem;
+                    }
+                    input:focus{
+                        outline: 0;
+                        border-color: #1749FF;
+                    }
+                    span.error{
+                        color: #F30101;
+                        font-size: 0.8rem;
+                        margin-top: 0.5rem;
+                    }
+                }
+                >.submit{
+                    button{
+                        width: 100%;
+                        background-color: $blueColor;
+                        font-size: 0.9rem;
+                        color: white;
+                        border: 0;
+                        font-family: shabnam;
+                        padding-top: 0.75rem;
+                        padding-bottom: 0.75rem;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        .uk-modal-body{
+            padding: 1.5rem !important;
+            .title{
+                margin-bottom: 1.5rem;
+                >div{
+                    i{
+                        font-size: 1.2rem;
+                    }
+                    h3{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+            .checkbox{
+                margin-bottom: 1.5rem;
+                label{
+                    font-size: 0.9rem;
+                }
+            }
+            .form{
+                >form{
+                    >.form-group{
+                        margin-bottom: 1rem;
+                        label{
+                            font-size: 0.75rem;
+                        }
+                        input{
+                            padding: 0.5rem;
+                            font-size: 0.75rem;
+                        }
+                        span.error{
+                            font-size: 0.75rem;
+                        }
+                    }
+                    >.submit{
+                        button{
+                            font-size: 0.75rem;
+                            padding-top: 0.5rem;
+                            padding-bottom: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

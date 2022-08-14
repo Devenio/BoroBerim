@@ -1,0 +1,259 @@
+div#logreg{
+    .uk-modal-body{
+        border-radius: 15px;
+        button.return{
+            position: absolute;
+            background-color: $backgroundColor;
+            border: 0;
+            left: 10px;
+            top: 10px;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            i{
+                font-size: 1rem
+            }
+        }
+        .title{
+            @include flex(column , null , center);
+            margin-bottom: 2rem;
+            i{
+                color: $blueColor;
+                font-size: 3rem;
+            }
+            h2{
+                color: black;
+                font-size: 1.1rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+            p{
+                font-size: 0.9rem;
+                color: black;
+                width: 60%;
+                line-height: 1.5rem;
+                text-align: center;
+            }
+        }
+        form{
+            @include flex(column , null , center);
+            >.form-group{
+                @include flex(column , null, center);
+                width: 60%;
+                position: relative;
+                margin-bottom: 1rem;
+                input{
+                    width: calc(100% - 2rem);
+                    background-color: #F5F5F5;
+                    border: 1px solid #F5F5F5;
+                    border-radius: 8px;
+                    // text-align: left;
+                    padding: 0.75rem 1rem;
+                    font-size: 0.9rem;
+                    // direction: ltr;
+                }
+                input[type=number]{
+                    -webkit-appearance: none;
+                    font-size: 1rem;
+                    text-align: left;
+                    direction: ltr;
+                }
+                input[type=number]::placeholder{
+                    text-align: right;
+                    direction: rtl;
+                    font-size: 0.9rem;
+                }
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                }
+                input[type=password]{
+                    text-align: right;
+                    direction: rtl;
+                    border: 1px solid black;
+                }
+                i.visible{
+                    position: absolute;
+                    left: 5%;
+                    top: 15px;
+                    cursor: pointer;
+                }
+                input.error{
+                    border: 1px solid #F30101;
+                }
+                a.change{
+                    position: absolute;
+                    color: black;
+                    opacity: 0.7;
+                    font-size: 0.9rem;
+                    text-decoration: none;
+                    right: 5%;
+                    top: 18px;
+                }
+                span.error{
+                    color: #F30101;
+                    font-size: 0.8rem;
+                    margin-top: 0.5rem;
+                    align-self: flex-start;
+                }
+                a.forget{
+                    text-decoration: none;
+                    font-size: 0.9rem;
+                    color: black;
+                    transition: all 0.3s;
+                    margin-top: 0.5rem;
+                }
+                a.forget:hover{
+                    color: $blueColor;
+                }
+                input:focus{
+                    outline: 0;
+                    border: 1px solid $blueColor;
+                }
+            }
+            >.form-group.code{
+                >div{
+                    @include flex(row , null , center , wrap);
+                    direction: ltr;
+                    margin-left: -0.5rem;
+                    margin-right: -0.5rem;
+                    width: 100%;
+                    input{
+                        background-color: #F5F5F5;
+                        border-radius: 5px;
+                        width: calc(19.3% - 0.5rem);
+                        height: 3rem;
+                        padding: 0;
+                        margin-right: 0.25rem;
+                        margin-left: 0.25rem;
+                        text-align: center;
+                        font-weight: 500;
+                    }
+                    input.error{
+                        color:  #F30101;
+                        border: 1px solid #F30101;
+                    }
+                    >.counter{
+                        @include flex(column , center , center);
+                        border: 1px solid #F5F5F5;
+                        width: calc(19.3% - 0.5rem);
+                        height: 3rem;
+                        margin-right: 0.25rem;
+                        margin-left: 0.25rem;
+                        border-radius: 5px;
+                        background-color: #F5F5F5;
+                        i{
+                            color: black;
+                            font-size: 1.1rem;
+                        }
+                        >div{
+                            @include flex(row , center , center);
+                            span{
+                                font-size: 0.9rem;
+                                color: black;
+                            }
+                        }
+                    }
+                } 
+            }
+            >.submit{
+                margin-top: 1rem;
+                width: 60%;
+                button{
+                    width: 100%;
+                    cursor: pointer;
+                    background-color: $blueColor;
+                    font-family: shabnam;
+                    color: white;
+                    font-size: 0.9rem;
+                    border: 0;
+                    padding-top: 0.75rem;
+                    padding-bottom: 0.75rem;
+                    border-radius: 8px;
+                }
+            }
+        }
+        >.level-2_1 ,>.level-2_2 , >.level-2_3 , >.level-3{
+            display: none;
+        }
+    }
+
+    @include mobile{
+        .uk-modal-body{
+            padding: 2rem !important;
+            .title{
+                margin-bottom: 1rem;
+                i{
+                    font-size: 2.5rem;
+                }
+                h2{
+                    font-size: 1rem;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                }
+                p{
+                    font-size: 0.75rem;
+                    width: 100%;
+                }
+            }
+            form{
+                >.form-group{
+                    width: 100%;
+                    input{
+                        padding: 0.5rem 0.75rem;
+                        font-size: 0.75rem;
+                    }
+                    input[type=number]{
+                        font-size: 0.9rem;
+                    }
+                    input[type=number]::placeholder{
+                        font-size: 0.75rem;
+                    }
+                    i.visible{
+                        top: 8px;
+                    }
+                    a.change{
+                        font-size: 0.75rem;
+                        top: 11px;
+                    }
+                    span.error{
+                        font-size: 0.75rem;
+                    }
+                    a.forget{
+                        font-size: 0.75rem;
+                    }
+                }
+                >.form-group.code{
+                    >div{
+                        input{
+                            width: calc(19.2% - 0.5rem);
+                            height: 2.5rem;
+                        }
+                        >.counter{
+                            width: calc(19.2% - 0.5rem);
+                            height: 2.5rem;
+                            i{
+                                font-size: 1rem;
+                            }
+                            >div{
+                                span{
+                                    font-size: 0.75rem;
+                                }
+                            }
+                        }
+                    } 
+                }
+                >.submit{
+                    width: 100%;
+                    button{
+                        font-size: 0.75rem;
+                        padding-top: 0.5rem;
+                        padding-bottom: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

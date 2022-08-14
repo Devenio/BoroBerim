@@ -1,0 +1,384 @@
+.main{
+    >.panel{
+        @include bodyPadding();
+        @include flex(row , space-between , null ,wrap);
+        >aside{
+            width: 18%;
+            max-width: 18%;
+            border: 1px solid rgba($color: black, $alpha: 0.1);
+            @include boxshadow();
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            align-self: flex-start;
+            >.user-image{
+                padding-bottom: 1rem;
+                border-bottom: 2px solid $blueColor;
+
+                >.show{
+                    @include flex(row , null , center );
+                    margin-bottom: 1rem;
+                    >.img{
+                        margin-left: 0.5rem;
+                        img{
+                            border-radius: 50%;
+                            width: 3rem;
+                            height: 3rem;
+                        }
+                    }
+                    >.name{
+                        @include flex(column);
+                        p.first{
+                            font-size: 0.9rem;
+                            color: black;
+                            margin-bottom: 0.5rem;
+                            font-weight: 500;
+                        }
+                        p.second{
+                            opacity: 0.7;
+                            font-size: 0.9rem;
+                            color: black;
+                        }
+                    }
+                }
+                
+
+                >.upload-image{
+                    button{
+                        @include flex(row , null , center);
+                        background-color: inherit;
+                        font-family: shabnam;
+                        font-size: 0.9rem;
+                        color: $blueColor;
+                        border: 0;
+                        cursor: pointer;
+                        i{
+                            margin-left: 0.5rem;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        
+            >.menu{
+                ul{
+                    padding-right: 0;
+                    margin-bottom: 0;
+                    li{
+                        padding-top: 1rem;
+                        padding-bottom: 1rem;
+                        border-bottom: 1px solid rgba(black , 0.1);
+                        a{
+                            @include flex(row,null ,center);
+                            text-decoration: none;
+                            color: black;
+                            font-size: 0.9rem;
+                            transition: all 0.3s;
+                            opacity: 0.9;
+                            i{
+                                font-size: 1.4rem;
+                                margin-left: 0.5rem;
+                                transition: all 0.3s;
+                            }
+                        }
+                        
+                        a:hover{
+                            color: $blueColor;
+                            font-weight: 500;
+                            i{
+                                color: $blueColor;
+                            }
+                        }
+                    }
+                    li.active{
+                        a{
+                            color: $blueColor;
+                            font-weight: 500;
+                            i{
+                                color: $blueColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        >div{
+            width: 72%;
+            max-width: 72%;
+            border: 1px solid rgba($color: black, $alpha: 0.1);
+            @include boxshadow();
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            h1{
+                font-size: 1.1rem;
+                color: black;
+            }
+            hr{
+                border-width: 3px;
+                border-color: $blueColor;
+                width: 15%;
+            }
+            form{
+                @include flex(row , space-between , center , wrap);
+                margin-top: 2rem;
+                >.form-group{
+                    width: 45%;
+                    max-width: 45%;
+                    @include flex(column);
+                    margin-bottom: 1.5rem;
+                    label{
+                        font-size: 0.9rem;
+                        color: black;
+                        margin-bottom: 0.5rem;
+                    }
+                    input{
+                        border-radius: 5px;
+                        padding: 0.5rem;
+                        font-size: 0.9rem;
+                        border: 1px solid rgba(black , 0.1);
+                    }
+                    input:focus{
+                        outline: none;
+                        border-color: $blueColor;
+                    }
+                    select{
+                        border-radius: 5px;
+                        padding: 0.5rem;
+                        border: 1px solid rgba($color: black, $alpha: 0.1);
+                        font-size: 0.9rem;
+                        font-family: shabnam;
+                        option{
+                            font-size: 0.9rem;
+                        }
+                    }
+                    select:focus{
+                        border-color: $blueColor;
+                        outline: 0;
+                    }
+                    textarea{
+                        padding: 0.5rem;
+                        border: 1px solid rgba(black , 0.1);
+                        border-radius: 5px;
+                        font-size: 0.9rem;
+                    }
+                    textarea:focus{
+                        border-color: $blueColor;
+                        outline: 0;
+                    }
+                    button{
+                        cursor: pointer;
+                        font-family: shabnam;
+                        font-size: 0.9rem;
+                        border-radius: 5px;
+                        background-color: $blueColor;
+                        padding: 0.5rem 1.5rem;
+                        color: white;
+                        border: 0;
+                    }
+                }
+                >.description{
+                    width: 100%;
+                    max-width: 100%;
+                }
+                >.submit{
+                    width: inherit;
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        >.panel{
+            >aside{
+                width: 100%;
+                max-width: 100%;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                >.user-image{
+                    @include flex(row , space-between , center , wrap);
+                    >.show{
+                        @include flex(row , null , center );
+                        margin-bottom: 0;
+                        >.img{
+                            img{
+                                width: 2rem;
+                                height: 2rem;
+                            }
+                        }
+                        >.name{
+                            p.first{
+                                font-size: 0.75rem;
+                            }
+                            p.second{
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                    
+    
+                    >.upload-image{
+                        button{
+                            font-size: 0.75rem;
+                            i{
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+                }
+            
+                >.menu{
+                    ul{
+                        li{
+                            a{
+                                font-size: 0.75rem;
+                                i{
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            >div{
+                width: 100%;
+                max-width: 100%;
+                padding: 1rem;
+                h1{
+                    font-size: 0.9rem;
+                }
+                hr{
+                    width: 30%;
+                }
+                form{
+                    margin-top: 1.5rem;
+                    >.form-group{
+                        width: 100%;
+                        max-width: 100%;
+                        margin-bottom: 1rem;
+                        label{
+                            font-size: 0.75rem;
+                        }
+                        input{
+                            font-size: 0.75rem;
+                        }
+                        select{
+                            font-size: 0.75rem;
+                            option{
+                                font-size: 0.75rem;
+                            }
+                        }
+                        textarea{
+                            font-size: 0.75rem;
+                        }
+                        button{
+                            font-size: 0.75rem;
+                            padding: 0.5rem 1.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet{
+        >.panel{
+            >aside{
+                width: 22%;
+                max-width: 22%;
+                padding: 1rem;
+                >.user-image{
+                    >.show{
+                        >.img{
+                            img{
+                                width: 2rem;
+                                height: 2rem;
+                            }
+                        }
+                        >.name{
+                            p.first{
+                                font-size: 0.75rem;
+                            }
+                            p.second{
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                    
+    
+                    >.upload-image{
+                        button{
+                            font-size: 0.75rem;
+                            i{
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+                }
+            
+                >.menu{
+                    ul{
+                        li{
+                            a{
+                                font-size: 0.75rem;
+                                i{
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            >div{
+                width: 68%;
+                max-width: 68%;
+                padding: 1rem;
+                h1{
+                    font-size: 0.9rem;
+                }
+                hr{
+                    width: 30%;
+                }
+                form{
+                    margin-top: 1.5rem;
+                    >.form-group{
+                        width: 100%;
+                        max-width: 100%;
+                        margin-bottom: 1rem;
+                        label{
+                            font-size: 0.75rem;
+                        }
+                        input{
+                            font-size: 0.75rem;
+                        }
+                        select{
+                            font-size: 0.75rem;
+                            option{
+                                font-size: 0.75rem;
+                            }
+                        }
+                        textarea{
+                            font-size: 0.75rem;
+                        }
+                        button{
+                            font-size: 0.75rem;
+                            padding: 0.5rem 1.25rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+    @include largeDevices{
+        >.panel{
+            >aside{
+                width: 20%;
+                max-width: 20%;
+            }
+            >div{
+                width: 68%;
+                max-width: 68%;
+            }
+        }
+    }
+}
