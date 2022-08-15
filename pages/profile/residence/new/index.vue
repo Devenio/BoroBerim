@@ -10,33 +10,24 @@
       @click="closeMenu"
     >
       <div class="user-profile-title">
-        <div class="mobile-icon">
-          <a href="javascript:void(0)" @click="openPageMenu">
-            <img src="/images/burger.svg" alt="openPageMenu" />
-          </a>
-        </div>
         <div class="inner-title">
           <div>
             <div class="img"></div>
-            <div class="name-mobile">
-              <p class="name"></p>
-              <span class="mobile"></span>
-              <p class="deposit">
-                <span>موجودی : </span>
-                <span>0 تومان</span>
-              </p>
-            </div>
           </div>
         </div>
       </div>
 
       <section class="set-place mb-5">
-        <div class="body flex flex-col">
-          <div class="flex items-center justify-evenly" v-show="menu === true">
+        <div class="body flex flex-col overflow-x-auto">
+          <div class="flex items-start justify-between text-center" v-show="menu === true">
             <!-- Steps -->
             <template v-for="(step, index) in steps">
               <div
-                class="flex flex-col items-center space-y-2 cursor-pointer group"
+                class="w-8 flex flex-col items-center space-y-2 cursor-pointer md:mx-0 group"
+                :class="{
+                  'mr-3': index === 0,
+                  'ml-3': index+1 === steps.length
+                }"
                 @click="steps[index].isActive = !steps[index].isActive"
               >
                 <div
@@ -52,7 +43,7 @@
                 </div>
 
                 <span
-                  class="text-xs group-hover:text-blue-600"
+                  class="text-xs group-hover:text-blue-600 w-max"
                   :class="{
                     'text-blue-600': step.isActive,
                   }"
@@ -62,8 +53,8 @@
               </div>
 
               <div
-                class="flex-grow h-1 bg-gray-100 -mt-5 relative"
-                style="min-width: 50px"
+                class="flex-grow h-1 bg-gray-100 mt-4 relative"
+                style="min-width: 90px"
                 v-if="index + 1 !== steps.length"
               >
                 <i class="bx bxs-lock bx-xs bg-white absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
