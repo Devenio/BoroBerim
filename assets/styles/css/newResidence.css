@@ -75,3 +75,25 @@ textarea:not(:focus):valid ~ .floating-label {
   color: #9ca3af;
   font-size: 14px;
 }
+
+/* width */
+.steps::-webkit-scrollbar {
+  height: 5px
+}
+
+/* Track */
+.steps::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #c8c8c8; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.steps::-webkit-scrollbar-thumb {
+  background: #858585; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.steps::-webkit-scrollbar-thumb:hover {
+  background: #606060;
+}

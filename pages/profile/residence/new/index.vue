@@ -11,161 +11,50 @@
     >
       <div class="user-profile-title">
         <div class="inner-title">
-          <div>
-            <div class="img"></div>
+          <div class="flex items-center justify-between">
+            <div
+              class="text-white md:text-black font-bold flex flex-col md:flex-row md:items-center"
+            >
+              <span> افزودن اقامتگاه </span>
+
+              <div class="mt-2 md:hidden">{{ stepsProgress }}% تکمیل شده</div>
+
+              <div
+                class="hidden md:flex mr-5 p-2 rounded-md bg-white items-center justify-between"
+              >
+                <div class="ml-3 text-sm text-blue-700">
+                  {{ stepsProgress }}% تکمیل شده
+                </div>
+
+                <div
+                  class="w-40 h-4 border border-solid border-gray-600 rounded-md overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-blue-700"
+                    :style="{
+                      width: `${stepsProgress}%`,
+                    }"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="submit bg-yellow-400 px-3 py-2 rounded-md flex items-center text-black"
+              type="button"
+              @click="!creating && saveResidence"
+            >
+              <i class="bx bx-chevron-right"></i>
+              {{ creating ? 'چند لحظه صبر کنید' : 'ذخیره و خروج' }}
+            </button>
           </div>
         </div>
       </div>
 
       <section class="set-place mb-5">
-        <div class="body flex flex-col overflow-x-auto">
-          <div class="flex items-start justify-between text-center" v-show="menu === true">
-            <!-- Steps -->
-            <template v-for="(step, index) in steps">
-              <div
-                class="w-8 flex flex-col items-center space-y-2 cursor-pointer md:mx-0 group"
-                :class="{
-                  'mr-3': index === 0,
-                  'ml-3': index+1 === steps.length
-                }"
-                @click="steps[index].isActive = !steps[index].isActive"
-              >
-                <div
-                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center transition duration-100 transform group-hover:scale-125 group-hover:bg-blue-600"
-                  :class="{
-                    'bg-blue-600': step.isActive,
-                  }"
-                >
-                  <i
-                    class="bx bx-xs group-hover:text-white"
-                    :class="[step.icon, step.isActive && 'text-white']"
-                  />
-                </div>
-
-                <span
-                  class="text-xs group-hover:text-blue-600 w-max"
-                  :class="{
-                    'text-blue-600': step.isActive,
-                  }"
-                >
-                  {{ step.title }}
-                </span>
-              </div>
-
-              <div
-                class="flex-grow h-1 bg-gray-100 mt-4 relative"
-                style="min-width: 90px"
-                v-if="index + 1 !== steps.length"
-              >
-                <i class="bx bxs-lock bx-xs bg-white absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
-              </div>
-            </template>
-          </div>
-        </div>
-      </section>
-
-      <section class="set-place">
-        <div class="body">
-          <h3 class="page-name">
-            <i class="bx bx-building-house"></i>
-            اقامتگاه جدید
-          </h3>
-          <div class="sidebar-form">
-            <div class="sidebar">
-              <ul v-show="menu === true">
-                <li>
-                  <nuxt-link to="/profile">
-                    <span class="counter"><i class="bx bx-home"></i></span>
-                    <span class="name">پروفایل</span>
-                  </nuxt-link>
-                </li>
-                <li class="active">
-                  <a href="javascript:void(0)">
-                    <span class="counter">1</span>
-                    <span class="name">اطلاعات اصلی</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">2</span>
-                    <span class="name">اطلاعات جزئی</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">3</span>
-                    <span class="name">تقویم کاری</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">4</span>
-                    <span class="name">تصاویر</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">5</span>
-                    <span class="name">اطلاعات محیطی</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">6</span>
-                    <span class="name">امکانات اقامتگاه</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">7</span>
-                    <span class="name">سرویس‌بهداشتی و حمام</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">8</span>
-                    <span class="name">اتاق‌ها</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">9</span>
-                    <span class="name">اطلاعات مالکیت</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">10</span>
-                    <span class="name">اطلاعات فردی</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">11</span>
-                    <span class="name">پارکینگ</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">12</span>
-                    <span class="name">نقشه</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">13</span>
-                    <span class="name">قوانین و مقررات</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">
-                    <span class="counter">14</span>
-                    <span class="name">قوانین کنسلی</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="form">
+        <div class="body flex flex-col md:flex-col-reverse px-5">
+          <div class="sidebar-form py-5">
+            <div class="form flex-grow">
               <p class="form-name"><span> اطلاعات اصلی اقامتگاه</span></p>
               <p class="form-description">
                 در اینجا لازم است تا اطلاعات اصلی مربوط به اقامتگاه‌تان را وارد
@@ -408,25 +297,115 @@
                     }}</span>
                   </div>
                 </div>
-                <div class="row submit-cancel">
+                <div class="row">
                   <button
-                    class="submit"
+                    class="submit bg-blue-700 p-3 rounded-md flex items-center justify-center text-white w-full"
                     type="button"
-                    v-if="creating === false"
-                    @click="saveResidence"
+                    @click="nextStep()"
                   >
-                    <i class="bx bx-chevron-right"></i> ثبت و ادامه
-                  </button>
-                  <button class="submit" type="button" v-else>
-                    <i class="bx bx-chevron-right"></i>
-                    چند لحظه صبر کنید
+                    ثبت و ادامه
                   </button>
                 </div>
               </form>
             </div>
+
+            <div class="w-80 mr-5 hidden md:block">
+              <div
+                class="w-full shadow-lg p-3 border border-solid border-gray-200 rounded-md"
+              >
+                راهنمای مرحله جاری:
+
+                <p class="mt-5 leading-normal">
+                  در این کادر توضیحات مربوط به هر بخش قرار میگیرد در این کادر
+                  توضیحات مربوط به هر بخش قرار میگیرد در این کادر توضیحات مربوط
+                  به هر بخش قرار میگیرد
+                </p>
+
+                <button
+                  class="w-full py-2 bg-blue-700 text-white rounded-md mt-5"
+                  @click="openDialog = true"
+                >
+                  راهنمای تصویری
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="steps flex items-start justify-between text-center p-3 border-t md:border-t-0 border-solid border-gray-300 overflow-x-auto fixed bottom-12 md:bottom-0 right-0 z-40 w-full bg-white md:relative"
+            v-show="menu === true"
+          >
+            <!-- Steps -->
+            <template v-for="(step, index) in steps">
+              <div
+                class="w-8 flex flex-col items-center space-y-2 cursor-pointer md:mx-0 group"
+                :class="{
+                  'mr-3': index === 0,
+                  'ml-3': index + 1 === steps.length,
+                }"
+                @click="updateActiveStep(index)"
+              >
+                <div
+                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center transition duration-100 transform group-hover:scale-125 group-hover:bg-blue-600"
+                  :class="{
+                    'bg-blue-600': step.isActive,
+                  }"
+                >
+                  <i
+                    class="bx bx-xs group-hover:text-white"
+                    :class="[step.icon, step.isActive && 'text-white']"
+                  />
+                </div>
+
+                <span
+                  class="text-xs group-hover:text-blue-600 w-max"
+                  :class="{
+                    'text-blue-600': step.isActive,
+                  }"
+                >
+                  {{ step.title }}
+                </span>
+              </div>
+
+              <div
+                class="flex-grow h-1 bg-gray-100 mt-4 relative"
+                style="min-width: 90px"
+                v-if="index + 1 !== steps.length"
+              >
+                <i
+                  class="bx bxs-lock bx-xs bg-white absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  v-if="index >= activeStepIndex"
+                />
+              </div>
+            </template>
           </div>
         </div>
       </section>
+
+      <button
+        class="px-5 py-3 bg-blue-700 text-white fixed left-5 rounded-md z-40 md:hidden"
+        style="bottom: 150px"
+        @click="openDialog = true"
+      >
+        راهنما ؟
+      </button>
+
+      <div
+        class="w-screen h-screen flex items-center justify-center fixed inset-0 z-50"
+        style="background-color: #00000050"
+        v-if="openDialog"
+      >
+        <div class="p-5 rounded-md bg-white relative">
+          <button
+            class="w-7 h-7 text-sm flex items-center justify-center rounded-full bg-gray-300 absolute right-0 top-0 transform translate-x-1/2 -translate-y-1/2"
+            @click="openDialog = false"
+          >
+            X
+          </button>
+
+          <div>در اینجا راهنما قرار میگیرد</div>
+        </div>
+      </div>
     </main>
   </div>
 </template>
@@ -469,7 +448,7 @@ export default {
         {
           title: 'اطلاعات اصلی',
           icon: 'bx-info-circle',
-          isActive: false,
+          isActive: true,
         },
         {
           title: 'اطلاعات جزیی',
@@ -537,6 +516,8 @@ export default {
           isActive: false,
         },
       ],
+      activeStepIndex: 0,
+      openDialog: false,
     }
   },
   async asyncData({ $auth, $axios, redirect }) {
@@ -552,6 +533,19 @@ export default {
     }
   },
   methods: {
+    nextStep() {
+      if (this.activeStepIndex + 1 === this.steps.length) return
+
+      this.steps[this.activeStepIndex].isActive = false
+      this.activeStepIndex++
+      this.steps[this.activeStepIndex].isActive = true
+    },
+    updateActiveStep(index) {
+      if (index <= this.activeStepIndex) {
+        this.steps.forEach((step) => (step.isActive = false))
+        this.steps[index].isActive = true
+      }
+    },
     numberWithCommas(value) {
       value = value.replace(/\D/g, '')
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -680,6 +674,9 @@ export default {
     },
   },
   computed: {
+    stepsProgress() {
+      return Math.round((this.activeStepIndex / this.steps.length) * 100)
+    },
     vuexMenuState() {
       return this.$store.getters.vuexMenuState
     },

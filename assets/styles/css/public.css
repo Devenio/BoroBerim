@@ -10635,7 +10635,6 @@ div#logreg .uk-modal-body > .level-2_1, div#logreg .uk-modal-body > .level-2_2, 
 
 .main > .set-place > .body {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
   border-radius: 10px;
 }
 
@@ -10718,11 +10717,6 @@ div#logreg .uk-modal-body > .level-2_1, div#logreg .uk-modal-body > .level-2_2, 
 
 .main > .set-place > .body .sidebar-form .sidebar ul li.active a .name {
   color: #1749FF;
-}
-
-.main > .set-place > .body .sidebar-form .form {
-  width: 80%;
-  max-width: 80%;
 }
 
 .main > .set-place > .body .sidebar-form .form .form-name {
@@ -11103,9 +11097,6 @@ div#logreg .uk-modal-body > .level-2_1, div#logreg .uk-modal-body > .level-2_2, 
 }
 
 @media (max-width: 767.98px) {
-  .main > .set-place > .body {
-    padding: 1rem;
-  }
   .main > .set-place > .body .page-name {
     font-size: 1rem;
     margin-bottom: 1.5rem;
@@ -11267,9 +11258,6 @@ div#logreg .uk-modal-body > .level-2_1, div#logreg .uk-modal-body > .level-2_2, 
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .main > .set-place > .body {
-    padding: 1rem;
-  }
   .main > .set-place > .body .page-name {
     font-size: 1rem;
     margin-bottom: 1.5rem;
@@ -11880,9 +11868,6 @@ div#logreg .uk-modal-body > .level-2_1, div#logreg .uk-modal-body > .level-2_2, 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
 }
 
@@ -11932,9 +11917,6 @@ div#logreg .uk-modal-body > .level-2_1, div#logreg .uk-modal-body > .level-2_2, 
   }
   .user-profile-title > .inner-title > div {
     background-image: url("/images/header-background-mobile.jpg");
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
     padding: 0.75rem;
   }
   .user-profile-title > .inner-title > div .img {
@@ -11968,9 +11950,6 @@ div#logreg .uk-modal-body > .level-2_1, div#logreg .uk-modal-body > .level-2_2, 
   }
   .user-profile-title > .inner-title > div {
     background-image: url("/images/header-background-mobile.jpg");
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
   }
   .user-profile-title > .inner-title > div .img {
     margin-left: 0;
