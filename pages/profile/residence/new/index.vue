@@ -157,7 +157,7 @@
               </form>
             </div>
 
-            <div class="w-80 mr-5 hidden md:block">
+            <div class="w-full mt-5 lg:w-80 lg:mt-0 mr-5 hidden md:block">
               <div class="w-full shadow-lg p-3 border border-solid border-gray-200 rounded-md">
                 راهنمای مرحله جاری:
 
